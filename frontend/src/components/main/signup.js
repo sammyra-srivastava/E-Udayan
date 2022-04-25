@@ -1,4 +1,12 @@
-import { Button, Container, Grid, Paper, TextField } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Paper,
+  TextField,
+} from "@mui/material";
 import React from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
@@ -73,89 +81,100 @@ const Signup = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Container>
-        <form onSubmit={handleSubmit}>
-          <div className="main1">
-            <h1>Sign Up</h1>
+      <Card sx={{ minWidth: "400px" }}>
+        <CardContent>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <h1>Sign Up</h1>
 
-            <div className="text1">
-              <TextField
-                className="w-100 mt-4"
-                variant="filled"
-                label="First Name"
-                type="text"
-                id="firstName"
-                onChange={handleChange}
-                value={values.firstName}
-              />
+              <div className="text1">
+                <TextField
+                  className="w-100 mt-4"
+                  variant="filled"
+                  label="First Name"
+                  type="text"
+                  id="firstName"
+                  onChange={handleChange}
+                  value={values.firstName}
+                />
+              </div>
+              <div className="text1">
+                <TextField
+                  className="w-100 mt-4"
+                  variant="filled"
+                  label="Last Name"
+                  type="text"
+                  id="lastName"
+                  onChange={handleChange}
+                  value={values.lastName}
+                />
+              </div>
+              <div className="text1">
+                <TextField
+                  className="w-100 mt-4"
+                  variant="filled"
+                  label="Email "
+                  type="email"
+                  id="email"
+                  onChange={handleChange}
+                  value={values.email}
+                />
+              </div>
+              <div className="text1">
+                <TextField
+                  className="w-100 mt-4"
+                  variant="filled"
+                  label="Mobile"
+                  type="number"
+                  id="mobile"
+                  onChange={handleChange}
+                  value={values.mobile}
+                />
+              </div>
+              <div className="text1">
+                <TextField
+                  className="w-100 mt-4"
+                  variant="filled"
+                  label="Password"
+                  id="password"
+                  onChange={handleChange}
+                  value={values.password}
+                />
+              </div>
+              <div className="button">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  className="mt-5"
+                  color="secondary"
+                  size="large"
+                >
+                  Submit
+                </Button>
+              </div>
             </div>
-            <div className="text1">
-              <TextField
-                className="w-100 mt-4"
-                variant="filled"
-                label="Last Name"
-                type="text"
-                id="lastName"
-                onChange={handleChange}
-                value={values.lastName}
-              />
-            </div>
-            <div className="text1">
-              <TextField
-                className="w-100 mt-4"
-                variant="filled"
-                label="Email "
-                type="email"
-                id="email"
-                onChange={handleChange}
-                value={values.email}
-              />
-            </div>
-            <div className="text1">
-              <TextField
-                className="w-100 mt-4"
-                variant="filled"
-                label="Mobile"
-                type="number"
-                id="mobile"
-                onChange={handleChange}
-                value={values.mobile}
-              />
-            </div>
-            <div className="text1">
-              <TextField
-                className="w-100 mt-4"
-                variant="filled"
-                label="Password"
-                id="password"
-                onChange={handleChange}
-                value={values.password}
-              />
-            </div>
-            <div className="button">
-              <Button
-                type="submit"
-                variant="contained"
-                className="mt-5"
-                color="secondary"
-                size="large"
-              >
-                Submit
-              </Button>
-            </div>
-          </div>
-        </form>
-      </Container>
+          </form>
+        </CardContent>
+      </Card>
     );
   };
 
   return (
-    <Container>
+    <Container sx={styles.container}>
       <Formik initialValues={userForm} onSubmit={formSubmit}>
         {formBody}
       </Formik>
     </Container>
   );
+};
+
+const styles = {
+  container: {
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    height: "100%",
+  },
 };
 
 export default Signup;

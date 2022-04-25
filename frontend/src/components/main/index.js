@@ -1,8 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
-    <div>index</div>
-  )
-}
-export  default Main;
+    <div style={{ height: "100vh" }}>
+      <Outlet></Outlet>
+    </div>
+  );
+};
+export default Main;

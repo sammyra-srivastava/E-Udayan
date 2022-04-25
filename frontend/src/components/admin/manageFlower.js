@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const ManageFlower = () => {
-  return (
-    <div>manageFlower</div>
-  )
-}
+  const [flowers, setFlowers] = useState([
+    {
+      name: "",
+    },
+  ]);
+
+  return <div>manageFlower</div>;
+};
 export default ManageFlower;
