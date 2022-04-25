@@ -1,17 +1,52 @@
-.container{
-    box-sizing: 120px;
-    border: 2px solid red;
-    margin-top: 50px;
-    margin-left: 700px;
-    display: flex;
+body{
+    background-image: url("https://pxwall.com/wp-content/uploads/2019/03/Rose-HD-Background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.main1{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 350px;
+    height: 550px;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+    border-radius: 20px ;   
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 5px 9px 9px rgb(57, 57, 57);
+    margin-left: 750px;
+    background-color: rgb(255, 255, 255);
     
     
-   
+    
+}
+h3{
+    display:inline;
+    padding: 40px;
+    margin-right: 60px;
+    color: white;
+}
+.text1{
+    padding: 8px 8px;
+    
+}
+
+h1{
+	color: rgb(12, 12, 12);
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin-bottom: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
 }
 .button{
-    padding-top: 20px;
-    text-align: center;
+    margin-top: 25px;
+    
 }
+
+
+
 

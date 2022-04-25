@@ -8,7 +8,7 @@ import Footer from "./components/main/footer";
 import Header from "./components/main/header";
 import Home from "./components/main/home";
 import Main from "./components/main/index";
-import Login from "./components/main/login";
+import SignIn from "./components/main/signin";
 import NotFound from "./components/main/notFound";
 import ResetPassword from "./components/main/resetPassword";
 import Signup from "./components/main/signup";
@@ -35,7 +35,7 @@ import { BrowserRouter ,Navigate, Route, Routes } from "react-router-dom";
                 <Route element = {<Header></Header>} path= "Header"/>
                 <Route element = {<Home></Home>} path= "home"/>
                 <Route element = {<Main></Main>} path= "main"/>
-                <Route element = {<Login></Login>} path= "login"/>
+                <Route element = {<SignIn></SignIn>} path= "signin"/>
                 <Route element = {<NotFound></NotFound>} path= "404"/>
                 <Route element = {<ResetPassword></ResetPassword>} path= "resetpassword"/>
                 <Route element = {<Signup></Signup>} path= "signup"/>

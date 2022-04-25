@@ -1,15 +1,13 @@
-import { Button, Container, Grid, Paper, TextField, } from "@mui/material";
+import { Button, Container, Grid, Paper, TextField } from "@mui/material";
 import React from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
-// import "../../stylesheet/signup.css"
-
-
+import "../../stylesheet/signup.css";
 
 const Signup = () => {
   const signupStyles = {
-    background: "url()",
+    background: "url(https://wallpaperaccess.com/full/1223823.jpg)",
     height: "100%",
   };
 
@@ -53,8 +51,6 @@ const Signup = () => {
       });
   };
 
-  
-
   // const validationSchema = Yup.object().shape({
   //   firstName: Yup.string()
   //     .min(2, 'Too Short!')
@@ -75,100 +71,81 @@ const Signup = () => {
   //     .required("Password Confirmation is Required"),
   // });
 
-
-
-
-
-
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <div className="container">
-     
-      <form onSubmit={handleSubmit}>
-       
-        <div className="firstname">
-         <h3>First Name</h3>
-        
-        <TextField
-          className="w-100 mt-4"
-          variant="outlined"
-          label="First Name"
-          type="text"
-          id="firstName"
-         
-          onChange={handleChange}
-          value={values.firstName}
-          
-          
-         
-        /> 
-        </div>
-        <div className="lastname">
-        <h3>Last Name</h3>
+      <Container>
+        <form onSubmit={handleSubmit}>
+          <div className="main1">
+            <h1>Sign Up</h1>
 
-        <TextField
-          className="w-100 mt-4"
-          variant="outlined"
-          label="Last Name"
-          type="text"
-          id="lastName"
-          onChange={handleChange}
-          value={values.lastName}
-          
-          
-        />
-        </div>
-        <div className="email">
-        <h3>Email</h3>
-
-        <TextField
-          className="w-100 mt-4"
-          variant="outlined"
-          label="Email"
-          type="email"
-          id="email"
-          onChange={handleChange}
-          value={values.email}
-          
-          
-        />
-        </div>
-        <div className="mobile">
-        <h3>Phone No</h3>
-
-        <TextField
-          className="w-100 mt-4"
-          variant="outlined"
-          label="Mobile"
-          type="number"
-          id="mobile"
-          onChange={handleChange}
-          value={values.mobile}
-        />
-        </div>
-        <div className="password">
-        <h3>Password</h3>
-
-        <TextField
-          className="w-100 mt-4"
-          variant="outlined"
-          label="Password"
-          id="password"
-          onChange={handleChange}
-          value={values.password}
-         
-          
-        />
-        </div>
-        <div className="button">
-
-        <Button type="submit" variant="contained" className="mt-5" color = "success" >
-          Submit
-        </Button>
-        </div>
-       
-      </form>
-      </div>
+            <div className="text1">
+              <TextField
+                className="w-100 mt-4"
+                variant="filled"
+                label="First Name"
+                type="text"
+                id="firstName"
+                onChange={handleChange}
+                value={values.firstName}
+              />
+            </div>
+            <div className="text1">
+              <TextField
+                className="w-100 mt-4"
+                variant="filled"
+                label="Last Name"
+                type="text"
+                id="lastName"
+                onChange={handleChange}
+                value={values.lastName}
+              />
+            </div>
+            <div className="text1">
+              <TextField
+                className="w-100 mt-4"
+                variant="filled"
+                label="Email "
+                type="email"
+                id="email"
+                onChange={handleChange}
+                value={values.email}
+              />
+            </div>
+            <div className="text1">
+              <TextField
+                className="w-100 mt-4"
+                variant="filled"
+                label="Mobile"
+                type="number"
+                id="mobile"
+                onChange={handleChange}
+                value={values.mobile}
+              />
+            </div>
+            <div className="text1">
+              <TextField
+                className="w-100 mt-4"
+                variant="filled"
+                label="Password"
+                id="password"
+                onChange={handleChange}
+                value={values.password}
+              />
+            </div>
+            <div className="button">
+              <Button
+                type="submit"
+                variant="contained"
+                className="mt-5"
+                color="secondary"
+                size="large"
+              >
+                Submit
+              </Button>
+            </div>
+          </div>
+        </form>
+      </Container>
     );
   };
 
