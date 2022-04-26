@@ -54,7 +54,7 @@ function App() {
           </Route>
 
           <Route element={<Navigate to="/main/home" />} path="" />
-          <Route element={<Navigate to="/404" />} path="*" />
+          <Route element={<Navigate to="/main/404" />} path="*" />
         </Routes>
       </BrowserRouter>
     </div>
