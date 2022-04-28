@@ -5,7 +5,7 @@ import Admin from "./components/admin/index";
 import ManageUser from "./components/admin/manageUser";
 import AdminProfile from "./components/admin/profile";
 import Footer from "./components/main/footer";
-import Header from "./components/main/header";
+
 import Home from "./components/main/home";
 import Main from "./components/main/index";
 import SignIn from "./components/main/signin";
@@ -19,6 +19,7 @@ import ManageFlorist from "./components/admin/manageFlorist";
 import ManageFlower from "./components/admin/manageFlower";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/sidebar";
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
             <Route element={<Home></Home>} path="home" />
             <Route element={<NotFound></NotFound>} path="404" />
             <Route element={<Footer></Footer>} path="footer" />
-            <Route element={<Header></Header>} path="Header" />
+            
             <Route
               element={<ResetPassword></ResetPassword>}
               path="resetpassword"
@@ -51,7 +52,10 @@ function App() {
 
           <Route element={<User></User>} path="user">
             <Route element={<UserProfile></UserProfile>} path="userprofile" />
+            <Route element={<Sidebar></Sidebar>} path="sidebar"/>
+            
           </Route>
+          
 
           <Route element={<Navigate to="/main/home" />} path="" />
           <Route element={<Navigate to="/main/404" />} path="*" />

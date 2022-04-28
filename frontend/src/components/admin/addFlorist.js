@@ -23,6 +23,7 @@ const AddFlorist = () => {
     email: "",
     address:"",
     flowers:"",
+    colour :"",
 
   };
 

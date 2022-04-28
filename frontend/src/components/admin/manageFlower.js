@@ -4,6 +4,7 @@ const ManageFlower = () => {
   const [flowers, setFlowers] = useState([
     {
       name: "",
+      
     },
   ]);
 
