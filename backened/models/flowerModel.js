@@ -5,6 +5,7 @@ const schema = new mongoose.Schema({
   type: String,
   color: String,
   price: String,
+  image: String,
 });
 
 const model = mongoose.model("flowers", schema);
