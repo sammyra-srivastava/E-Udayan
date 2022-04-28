@@ -30,8 +30,14 @@ function App() {
             <Route element={<AddFlorist></AddFlorist>} path="addflorist" />
             <Route element={<Dashboard></Dashboard>} path="dashboard" />
             <Route element={<ManageUser></ManageUser>} path="manageuser" />
-            <Route element={<ManageFlorist></ManageFlorist>} path="managerflorist"/>
-            <Route element={<ManageFlower></ManageFlower>} path="manageflower"/>
+            <Route
+              element={<ManageFlorist></ManageFlorist>}
+              path="managerflorist"
+            />
+            <Route
+              element={<ManageFlower></ManageFlower>}
+              path="manageflower"
+            />
             <Route
               element={<AdminProfile></AdminProfile>}
               path="adminprofile"
@@ -43,7 +49,7 @@ function App() {
             <Route element={<Home></Home>} path="home" />
             <Route element={<NotFound></NotFound>} path="404" />
             <Route element={<Footer></Footer>} path="footer" />
-            
+
             <Route
               element={<ResetPassword></ResetPassword>}
               path="resetpassword"
@@ -52,10 +58,8 @@ function App() {
 
           <Route element={<User></User>} path="user">
             <Route element={<UserProfile></UserProfile>} path="userprofile" />
-            <Route element={<Sidebar></Sidebar>} path="sidebar"/>
-            
+            <Route element={<Sidebar></Sidebar>} path="sidebar" />
           </Route>
-          
 
           <Route element={<Navigate to="/main/home" />} path="" />
           <Route element={<Navigate to="/main/404" />} path="*" />
