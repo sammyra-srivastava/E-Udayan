@@ -5,9 +5,8 @@ const schema = new mongoose.Schema({
   type: String,
   color: String,
   price: String,
-  florist: String,
 });
 
-const model = mongoose.model("florist", schema);
+const model = mongoose.model("flowers", schema);
 
 module.exports = model;
