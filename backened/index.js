@@ -4,8 +4,11 @@ const express = require("express");
 // importing User Router
 const userRouter = require("./routers/userRouter");
 
-// import Video Router
+// import florist Router
 const floristRouter = require("./routers/floristRouter");
+
+// import flower Router
+const floristRouter = require("./routers/flowerRouter");
 
 // initialize express app
 const app = express();
@@ -26,9 +29,14 @@ app.use(express.json());
 
 // middleware
 app.use("/user", userRouter);
-//app.use("/video", videoRouter);
+
+//app.use("/florist", floristRouter);
 
 app.use("/florist", floristRouter);
+
+//app.use("/flower", flowerRouter);
+
+app.use("/flower", flowerRouter);
 
 // Route
 app.get("/", (req, res) => {

@@ -5,7 +5,7 @@ import Admin from "./components/admin/index";
 import ManageUser from "./components/admin/manageUser";
 import AdminProfile from "./components/admin/profile";
 import Footer from "./components/main/footer";
-
+import BrowseFlower from "./components/main/browseFlower";
 import Home from "./components/main/home";
 import Main from "./components/main/index";
 import SignIn from "./components/main/signin";
@@ -49,6 +49,8 @@ function App() {
             <Route element={<Home></Home>} path="home" />
             <Route element={<NotFound></NotFound>} path="404" />
             <Route element={<Footer></Footer>} path="footer" />
+            <Route element={<BrowseFlower></BrowseFlower>} path="browserflower" />
+
 
             <Route
               element={<ResetPassword></ResetPassword>}

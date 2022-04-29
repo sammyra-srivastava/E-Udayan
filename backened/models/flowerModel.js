@@ -2,10 +2,10 @@ const mongoose = require("../connection");
 
 const schema = new mongoose.Schema({
   name: String,
-  type: String,
   color: String,
-  price: String,
-  image: String,
+  price_per_kg: Number,
+  price_per_unit: Number,
+  
 });
 
 const model = mongoose.model("flowers", schema);
