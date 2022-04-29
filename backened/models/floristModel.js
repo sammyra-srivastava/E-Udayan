@@ -6,9 +6,9 @@ const schema = new mongoose.Schema({
   mobile: String,
   email: String,
   address: String,
-  flowers: Array,
+  flowers: [{ type: mongoose.Types.ObjectId, ref: "flowers" }],
 });
 
 const model = mongoose.model("florist", schema);
 
-module.exports = model;  
+module.exports = model;

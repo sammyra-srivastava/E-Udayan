@@ -5,7 +5,7 @@ const schema = new mongoose.Schema({
   color: String,
   price_per_kg: Number,
   price_per_unit: Number,
-  
+  createdAt: { type: Date, default: new Date() },
 });
 
 const model = mongoose.model("flowers", schema);

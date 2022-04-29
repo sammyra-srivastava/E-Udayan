@@ -28,6 +28,10 @@ const pages = [
     name: "Browse Vlogs",
     link: "/list",
   },
+  {
+    name: "Manage Flowers",
+    link: "/admin/manageflower",
+  },
 ];
 
 const guestUser = [

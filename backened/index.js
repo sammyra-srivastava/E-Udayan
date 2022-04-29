@@ -8,7 +8,7 @@ const userRouter = require("./routers/userRouter");
 const floristRouter = require("./routers/floristRouter");
 
 // import flower Router
-const floristRouter = require("./routers/flowerRouter");
+const flowerRouter = require("./routers/flowerRouter");
 
 // initialize express app
 const app = express();
@@ -33,8 +33,6 @@ app.use("/user", userRouter);
 //app.use("/florist", floristRouter);
 
 app.use("/florist", floristRouter);
-
-//app.use("/flower", flowerRouter);
 
 app.use("/flower", flowerRouter);
 

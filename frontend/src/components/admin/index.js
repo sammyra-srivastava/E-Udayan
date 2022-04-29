@@ -6,29 +6,26 @@ import { AccountCircle, AccountCircleOutlined } from "@mui/icons-material";
 const Admin = () => {
   const options = [
     {
-      name: "Profile",
+      name: "Add New Florist",
       icon: <AccountCircle />,
-      link: "/admin/profile",
+      link: "/admin/addflorist",
     },
     {
-      name: "Profile",
-      icon: <AccountCircle />,
-      link: "/admin/profile",
-    },
-    {
-      name: "Manage User",
+      name: "Manage Florist",
       icon: <AccountCircleOutlined />,
-      link: "/admin/profile",
+      link: "/admin/managerflorist",
+    },
+    {
+      name: "Manage Flowers",
+      icon: <AccountCircleOutlined />,
+      link: "/admin/manageflower",
     },
   ];
 
   return (
-    <div>
-      <h1>Admin Component</h1>
-      <Sidebar title="Admin Dashboard" options={options}>
-        <Outlet />
-      </Sidebar>
-    </div>
+    <Sidebar title="Admin Dashboard" options={options}>
+      <Outlet />
+    </Sidebar>
   );
 };
 

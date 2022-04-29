@@ -13,7 +13,7 @@ router.post("/add", (req, res) => {
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).json(error);
+      res.status(500).json(err);
     });
 
   // console.log("user request at /add");
@@ -34,6 +34,26 @@ router.delete("/delete/:id", (req, res) => {
   Model.findByIdAndDelete(req.params.id)
     .then((data) => {
       res.status(200).json({ message: "success" });
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.put("/update/:id", (req, res) => {
+  Model.findByIdAndUpdate(req.params.id, req.body)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.put("/pushupdate/:id", (req, res) => {
+  Model.findByIdAndUpdate(req.params.id, { $push: req.body })
+    .then((data) => {
+      res.status(200).json(data);
     })
     .catch((err) => {
       res.status(500).json(err);
