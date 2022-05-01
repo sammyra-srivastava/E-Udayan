@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
+
 import {
   AccountCircle,
   AppRegistration,
@@ -25,32 +26,39 @@ import { useEffect, useState } from "react";
 
 const pages = [
   {
-    name: "Browse Vlogs",
-    link: "/list",
+    name: "Florist",
+    link: "/main/browseflorist",
   },
   {
-    name: "Manage Flowers",
-    link: "/admin/manageflower",
+    name: "Flowers",
+    link: "/main/browseflower",
+  },
+  {
+    name: "Dashboard",
+    link: "/admin/dashboard",
   },
 ];
 
 const guestUser = [
   {
     name: "Home",
-    link: "/home",
+    link: "/main/home",
     icon: <Home />,
   },
   {
     name: "Login",
-    link: "/login",
+    link: "/main/signin",
     icon: <Login />,
   },
   {
     name: "Signup",
-    link: "/signup",
+    link: "/main/signup",
     icon: <AppRegistration />,
   },
+
+
 ];
+
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -116,7 +124,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            VLOGGER
+            E-Udayaan
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -161,7 +169,7 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            VLOGGER
+            E-Udayaan
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map(({ name, link }) => (
@@ -230,7 +238,7 @@ const Header = () => {
                 sx={{ p: 0 }}
                 color="inherit"
               >
-                <MoreVert />
+              <MoreVert />
               </IconButton>
             </Tooltip>
             <Menu
@@ -252,7 +260,8 @@ const Header = () => {
               {guestUser.map(({ name, icon, link }) => (
                 <MenuItem key={name} onClick={(e) => navigate(link)}>
                   <ListItemIcon>{icon}</ListItemIcon>
-                  <ListItemText>{name}</ListItemText>
+                  <ListItemText>{name}</ListItemText>        
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />       
                 </MenuItem>
               ))}
             </Menu>

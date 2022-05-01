@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Paper, TextField } from "@mui/material";
+import { Button, Container, Card, CardContent, TextField } from "@mui/material";
 import React from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
@@ -53,7 +53,9 @@ const AddFlorist = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <div className="container">
+      <Card sx={{ minWidth: "400px" }}>
+        <CardContent>
+      
         <form onSubmit={handleSubmit}>
           <div>
             <TextField
@@ -124,17 +126,28 @@ const AddFlorist = () => {
             </Button>
           </div>
         </form>
-      </div>
+      
+      </CardContent>
+      </Card>
     );
   };
 
   return (
-    <Container>
+    <Container sx={styles.container}>
       <Formik initialValues={addForm} onSubmit={formSubmit}>
         {formBody}
       </Formik>
     </Container>
   );
+};
+
+const styles = {
+  container: {
+    display: "flex",
+    justifyContent: "flex-centre",
+    alignItems: "center",
+    height: "100%",
+  },
 };
 
 export default AddFlorist;

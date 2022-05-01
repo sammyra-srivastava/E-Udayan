@@ -17,6 +17,7 @@ import UserProfile from "./components/user/profile";
 import AddFlorist from "./components/admin/addFlorist";
 import ManageFlorist from "./components/admin/manageFlorist";
 import ManageFlower from "./components/admin/manageFlower";
+import BrowseFlorist from "./components/main/browseflorist";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
@@ -39,6 +40,7 @@ function App() {
               path="manageflower"
             />
             <Route
+
               element={<AdminProfile></AdminProfile>}
               path="adminprofile"
             />
@@ -49,7 +51,8 @@ function App() {
             <Route element={<Home></Home>} path="home" />
             <Route element={<NotFound></NotFound>} path="404" />
             <Route element={<Footer></Footer>} path="footer" />
-            <Route element={<BrowseFlower></BrowseFlower>} path="browserflower" />
+            <Route element={<BrowseFlower></BrowseFlower>} path="browseflower" />
+            <Route element={<BrowseFlorist/>} path="browseflorist" />
 
 
             <Route

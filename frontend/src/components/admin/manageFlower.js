@@ -15,11 +15,7 @@ const ManageFlower = () => {
   const [selFlorist, setSelFlorist] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const [flowers, setFlowers] = useState([
-    {
-      name: "",
-    },
-  ]);
+  
 
   const url = app_config.backend_url;
 

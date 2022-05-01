@@ -25,7 +25,7 @@ const browseFlower = () => {
       </div>
       <div className="col">
       <div class="card h-100">
-        <div className="card">
+        {/* <div className="card"> */}
         <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
           <img src="https://c1.wallpaperflare.com/preview/846/239/681/roses-flowers-rou-red.jpg" className="card-img-top" alt="Rose Flower" style={{ cursor:"pointer" }}/>
           <a href="#!">
@@ -39,7 +39,7 @@ const browseFlower = () => {
             <span><a href="#!" class="btn btn-secondary" sx={{ mt: 3 }}  >Buy Now</a></span>
             <span><a href="#!" class="btn btn-secondary" sx={{ mt: 3 }} >Add to Cart</a></span>
           </div>
-        </div>
+        {/* </div> */}
         </div>
       </div>
       <div className="col">
