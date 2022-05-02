@@ -18,10 +18,11 @@ import AddFlorist from "./components/admin/addFlorist";
 import ManageFlorist from "./components/admin/manageFlorist";
 import ManageFlower from "./components/admin/manageFlower";
 import BrowseFlorist from "./components/main/browseflorist";
-import FloristList from "./components/main/floristlist"
+import FloristList from "./components/main/floristlist";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
+import UserAuthenticator from "./components/userAuthenticator";
 
 function App() {
   return (
@@ -41,7 +42,6 @@ function App() {
               path="manageflower"
             />
             <Route
-
               element={<AdminProfile></AdminProfile>}
               path="adminprofile"
             />
@@ -52,10 +52,12 @@ function App() {
             <Route element={<Home></Home>} path="home" />
             <Route element={<NotFound></NotFound>} path="404" />
             <Route element={<Footer></Footer>} path="footer" />
-            <Route element={<BrowseFlower></BrowseFlower>} path="browseflower" />
-            <Route element={<BrowseFlorist/>} path="browseflorist" />
-            <Route element={<FloristList/>} path="floristlist" />
-
+            <Route
+              element={<BrowseFlower></BrowseFlower>}
+              path="browseflower"
+            />
+            <Route element={<BrowseFlorist />} path="browseflorist" />
+            <Route element={<FloristList />} path="floristlist" />
 
             <Route
               element={<ResetPassword></ResetPassword>}
@@ -63,7 +65,14 @@ function App() {
             />
           </Route>
 
-          <Route element={<User></User>} path="user">
+          <Route
+            element={
+              <UserAuthenticator>
+                <User />
+              </UserAuthenticator>
+            }
+            path="user"
+          >
             <Route element={<UserProfile></UserProfile>} path="userprofile" />
             <Route element={<Sidebar></Sidebar>} path="sidebar" />
           </Route>
