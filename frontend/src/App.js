@@ -18,6 +18,7 @@ import AddFlorist from "./components/admin/addFlorist";
 import ManageFlorist from "./components/admin/manageFlorist";
 import ManageFlower from "./components/admin/manageFlower";
 import BrowseFlorist from "./components/main/browseflorist";
+import FloristList from "./components/main/floristlist"
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
@@ -53,6 +54,7 @@ function App() {
             <Route element={<Footer></Footer>} path="footer" />
             <Route element={<BrowseFlower></BrowseFlower>} path="browseflower" />
             <Route element={<BrowseFlorist/>} path="browseflorist" />
+            <Route element={<FloristList/>} path="floristlist" />
 
 
             <Route
