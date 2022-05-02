@@ -10,7 +10,7 @@ import React from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
-import "../../stylesheet/signup.css";
+
 
 const Signup = () => {
   const signupStyles = {
