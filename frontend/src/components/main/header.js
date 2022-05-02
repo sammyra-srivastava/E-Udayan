@@ -26,11 +26,11 @@ import { useEffect, useState } from "react";
 
 const pages = [
   {
-    name: "Florist",
+    name: "Shop",
     link: "/main/browseflorist",
   },
   {
-    name: "Flowers",
+    name: "Catalogue",
     link: "/main/browseflower",
   },
   {
