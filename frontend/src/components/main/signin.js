@@ -1,23 +1,23 @@
 
-import {
-  Button,
-  Card,
-  CardContent,
-  Container,
-
-  TextField,
-} from "@mui/material";
+import { Button,Card,CardContent,Container,TextField} from "@mui/material";
 import React from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Box from '@mui/material/Box';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import Stack from '@mui/material/Stack';
 
 
 const Signin = () => {
+ 
   
   const url = app_config.backend_url;
-
 
   const userForm = {
     
@@ -57,68 +57,84 @@ const Signin = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Card sx={{ minWidth: "400px" }}>
-        <CardContent>
-          <form onSubmit={handleSubmit}>
+     
+      <Container >   
+        
+               
+        <Card style={{borderRadius:10, boxShadow:"4px 4px 4px 4px #89009c"}} sx={{mt:10,mb:10}}>
+        <Box style={{display:"flex",float:"left"}}>
+          <img src="https://thumbs.dreamstime.com/b/florists-woman-her-flowers-shop-vector-illustration-florist-girl-flower-44402546.jpgg" alt="cartoon"></img>          
+        </Box>  
+        <Box style={{display:"flex", justifyContent:"center", borderRadius:5, boxShadow:"2px 2px 2px 2px #fce6ff"}}sx={{ml:3,mr:2,mt:5}}>
+          <CardContent >
+            <Box sx={{ mt:2, ml:13}}>
+            <h5 >LOGIN</h5>
+            </Box>
+            <p>Doesn't have an account yet? <Button variant="text" onClick={(e) => navigate()}>Sign Up</Button></p>
             <div>
-              <h1>Login In</h1>
-              
-              <div className="text1">
-                <TextField
-                  className="w-100 mt-4"
-                  variant="filled"
-                  label="Email "
-                  type="email"
-                  id="email"
-                  onChange={handleChange}
-                  value={values.email}
-                />
+              <h6>Email Address</h6>
+            <TextField
+              className="w-100 "
+              variant="standard"
+              type="email"
+              id="email"
+              onChange={handleChange}
+              value={values.email}/>
               </div>
-             
-              <div className="text1">
-                <TextField
-                  className="w-100 mt-4"
-                  variant="filled"
-                  label="Password"
-                  id="password"
-                  onChange={handleChange}
-                  value={values.password}
-                />
+              <br></br>
+              <div >
+              <h6>Password</h6>
+            <TextField 
+             className="w-100 "          
+              variant="standard"
+              type="password"
+              id="password"
+              onChange={handleChange}
+              value={values.password}/>
               </div>
-              <div className="button">
-                <Button
+              <FormGroup sx={{mt:1}}>
+                <FormControlLabel control={<Checkbox />} label="Remember me" />
+              </FormGroup>
+              <Box sx={{  ml:12}}>
+              <Button
                   type="submit"
                   variant="contained"
-                  className="mt-5"
+                  className="mt-2 mb-2 "
                   color="secondary"
-                  size="large"
-                >
-                  Submit
+                  size="large">
+                  Login
+              </Button>
+              </Box>
+              <hr></hr>
+              <Stack direction="row" spacing={4} sx= {{mt:3}}>
+                <Button variant="outlined" color="error" startIcon={< GoogleIcon/>}>
+                  Google
                 </Button>
-              </div>
-            </div>
-          </form>
-        </CardContent>
-      </Card>
+                <Button variant="outlined"color="primary" endIcon={<FacebookOutlinedIcon/>}>
+                   Facebook
+                </Button>
+              </Stack>
+          </CardContent>
+          </Box>
+        </Card>
+       
+      </Container>
+     
+     
+      
     );
   };
 
+
   return (
-    <Container sx={styles.container}>
+   
       <Formik initialValues={userForm} onSubmit={loginSubmit}>
         {formBody}
       </Formik>
-    </Container>
+   
   );
 };
 
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    height: "100%",
-  },
-};
+
 
 export default Signin;

@@ -19,6 +19,7 @@ import {
   Login,
   MoreVert,
   Subscriptions,
+  ShoppingCart,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "@mui/material";
@@ -54,6 +55,11 @@ const guestUser = [
     name: "Signup",
     link: "/main/signup",
     icon: <AppRegistration />,
+  },
+  {
+    name: "Cart",
+    link: "",
+    icon: <ShoppingCart />,
   },
 
 

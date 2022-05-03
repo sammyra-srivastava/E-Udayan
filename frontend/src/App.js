@@ -4,7 +4,6 @@ import Dashboard from "./components/admin/dashboard";
 import Admin from "./components/admin/index";
 import ManageUser from "./components/admin/manageUser";
 import AdminProfile from "./components/admin/profile";
-import Footer from "./components/main/footer";
 import BrowseFlower from "./components/main/browseFlower";
 import Home from "./components/main/home";
 import Main from "./components/main/index";
@@ -24,43 +23,41 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
 import UserAuthenticator from "./components/userAuthenticator";
 
+
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route element={<Admin></Admin>} path="admin">
-            <Route element={<AddFlorist></AddFlorist>} path="addflorist" />
-            <Route element={<Dashboard></Dashboard>} path="dashboard" />
-            <Route element={<ManageUser></ManageUser>} path="manageuser" />
+          <Route element={<Admin/>} path="admin">
+            <Route element={<AddFlorist/>} path="addflorist" />
+            <Route element={<Dashboard/>} path="dashboard" />
+            <Route element={<ManageUser/>} path="manageuser" />
             <Route
-              element={<ManageFlorist></ManageFlorist>}
+              element={<ManageFlorist/>}
               path="managerflorist"
             />
             <Route
-              element={<ManageFlower></ManageFlower>}
+              element={<ManageFlower/>}
               path="manageflower"
             />
             <Route
-              element={<AdminProfile></AdminProfile>}
+              element={<AdminProfile/>}
               path="adminprofile"
             />
           </Route>
-          <Route element={<Main></Main>} path="main">
-            <Route element={<Signup></Signup>} path="signup" />
-            <Route element={<SignIn></SignIn>} path="signin" />
-            <Route element={<Home></Home>} path="home" />
-            <Route element={<NotFound></NotFound>} path="404" />
-            <Route element={<Footer></Footer>} path="footer" />
-            <Route
-              element={<BrowseFlower></BrowseFlower>}
-              path="browseflower"
-            />
+          <Route element={<Main/>} path="main">
+            <Route element={<Signup/>} path="signup" />
+            <Route element={<SignIn/>} path="signin" />
+            <Route element={<Home/>} path="home" />
+            <Route element={<NotFound/>} path="404" />
+            
+            <Route element={<BrowseFlower/>} path="browseflower"/>
             <Route element={<BrowseFlorist />} path="browseflorist" />
             <Route element={<FloristList />} path="floristlist" />
 
             <Route
-              element={<ResetPassword></ResetPassword>}
+              element={<ResetPassword/>}
               path="resetpassword"
             />
           </Route>
