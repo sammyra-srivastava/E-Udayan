@@ -121,7 +121,8 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="fixed">
+    <div  >
+    <AppBar position="fixed" sx={{backgroundColor:"#ff00ff"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -275,6 +276,7 @@ const Header = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    </div>
   );
 };
 export default Header;
