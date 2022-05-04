@@ -56,8 +56,12 @@ const AddFlower = ({ floristId }) => {
     }).then((res) => {
       if (res.status === 200) {
         Swal.fire({
-          icon: "success",
-          title: "Registered Successfully!!",
+          title: 'Sweet!',
+          text: 'Flower is added in your profile',
+          imageUrl: 'https://thumbs.dreamstime.com/b/beautiful-full-clear-pic-pink-gerbera-flower-morning-fresh-distinct-capture-172899046.jpg',
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: 'Custom image',
         });
       }
     });

@@ -34,15 +34,27 @@ const Signin = () => {
       headers: { "Content-Type": "application/json" },
     }).then((res) => {
       if (res.status === 200) {
+        let timerInterval
         Swal.fire({
-          icon: "success",
-          title: "Success!!",
-          text: "Successfully loggedin",
-        });
+          title: 'Successfully Logged In!',
+          html: 'You will be directed to home page <b></b> milliseconds.',
+          timer: 1000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading()
+            const b = Swal.getHtmlContainer().querySelector('b')
+            timerInterval = setInterval(() => {
+              b.textContent = Swal.getTimerLeft()
+            }, 100)
+          },
+          willClose: () => {
+            clearInterval(timerInterval)
+          }
+        })
 
         res.json().then((data) => {
           sessionStorage.setItem("user", JSON.stringify(data));
-          navigate("/user/profile");
+          navigate("/main/home");
         });
       } else if (res.status === 400) {
         Swal.fire({
@@ -58,9 +70,7 @@ const Signin = () => {
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
      
-      <Container >   
-        
-               
+      <Container >                  
         <Card style={{borderRadius:10, boxShadow:"4px 4px 4px 4px #89009c"}} sx={{mt:10,mb:10}}>
         <Box style={{display:"flex",float:"left"}}>
           <img src="https://thumbs.dreamstime.com/b/florists-woman-her-flowers-shop-vector-illustration-florist-girl-flower-44402546.jpgg" alt="cartoon"></img>          
@@ -70,7 +80,8 @@ const Signin = () => {
             <Box sx={{ mt:2, ml:13}}>
             <h5 >LOGIN</h5>
             </Box>
-            <p>Doesn't have an account yet? <Button variant="text" onClick={(e) => navigate()}>Sign Up</Button></p>
+            <p>Doesn't have an account yet? <Button variant="text" onClick={(e) => navigate("/main/signup")}>Sign Up</Button></p>
+            <form onSubmit={handleSubmit}>
             <div>
               <h6>Email Address</h6>
             <TextField
@@ -101,7 +112,8 @@ const Signin = () => {
                   variant="contained"
                   className="mt-2 mb-2 "
                   color="secondary"
-                  size="large">
+                  size="large"
+                  >
                   Login
               </Button>
               </Box>
@@ -114,6 +126,7 @@ const Signin = () => {
                    Facebook
                 </Button>
               </Stack>
+              </form>
           </CardContent>
           </Box>
         </Card>
