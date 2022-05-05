@@ -6,6 +6,7 @@ const schema = new mongoose.Schema({
   mobile: String,
   email: String,
   address: String,
+  image: String,
   flowers: [{ type: mongoose.Types.ObjectId, ref: "flowers" }],
 });
 

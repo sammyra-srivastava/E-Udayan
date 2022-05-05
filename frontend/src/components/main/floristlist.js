@@ -17,7 +17,7 @@ const FloristList = () => {
 
    
   return (
-    <Container sx={{ mt: 8 }} >
+    <Container sx={{ mt: 18 }} >
     <Card style={{width:"1000px"}} sx={{ mt: 5 }}>
 
     <Container sx={{ color: 'text.primary' }} >      

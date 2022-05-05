@@ -33,15 +33,15 @@ const Home = () => {
         ></button>
       </div>
 
-      <div className="carousel-inner">
-        <div class="carousel-item active">
-          <video class="img-fluid" autoPlay loop muted>
+      {/* <div className="carousel-inner">
+        <div className="carousel-item active">
+          <video className="img-fluid" autoPlay loop muted>
             <source
-              src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4"
+              src="http://localhost:5000/videos/pexels-mikhail-nilov-7675962.mp4"
               type="video/mp4"
             />
           </video>
-          <div class="carousel-caption d-none d-md-block">
+          <div className="carousel-caption d-none d-md-block">
             <h5>First slide label</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </div>
@@ -50,7 +50,7 @@ const Home = () => {
         <div className="carousel-item">
           <video className="img-fluid" autoPlay loop muted>
             <source
-              src="https://mdbcdn.b-cdn.net/img/video/forest.mp4"
+              src="http://localhost:5000/videos/pexels-karolina-grabowska-8114596.mp4"
               type="video/mp4"
             />
           </video>
@@ -75,7 +75,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <button
         className="carousel-control-prev"
