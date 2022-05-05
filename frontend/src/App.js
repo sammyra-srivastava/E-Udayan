@@ -22,44 +22,36 @@ import FloristList from "./components/main/floristlist";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
 import UserAuthenticator from "./components/userAuthenticator";
-
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Toaster position="top-center" />
         <Routes>
-          <Route element={<Admin/>} path="admin">
-            <Route element={<AddFlorist/>} path="addflorist" />
-            <Route element={<Dashboard/>} path="dashboard" />
-            <Route element={<ManageUser/>} path="manageuser" />
-            <Route
-              element={<ManageFlorist/>}
-              path="managerflorist"
-            />
-            <Route
-              element={<ManageFlower/>}
-              path="manageflower"
-            />
-            <Route
-              element={<AdminProfile/>}
-              path="adminprofile"
-            />
+          <Route element={<Admin />} path="admin">
+            <Route element={<AddFlorist />} path="addflorist" />
+            <Route element={<Dashboard />} path="dashboard" />
+            <Route element={<ManageUser />} path="manageuser" />
+            <Route element={<ManageFlorist />} path="managerflorist" />
+            <Route element={<ManageFlower />} path="manageflower" />
+            <Route element={<AdminProfile />} path="adminprofile" />
           </Route>
-          <Route element={<Main/>} path="main">
-            <Route element={<Signup/>} path="signup" />
-            <Route element={<SignIn/>} path="signin" />
-            <Route element={<Home/>} path="home" />
-            <Route element={<NotFound/>} path="404" />
-            
-            <Route element={<BrowseFlower/>} path="browseflower"/>
-            <Route element={<BrowseFlorist />} path="browseflorist" />
+          <Route element={<Main />} path="main">
+            <Route element={<Signup />} path="signup" />
+            <Route element={<SignIn />} path="signin" />
+            <Route element={<Home />} path="home" />
+            <Route element={<NotFound />} path="404" />
+
+            <Route element={<BrowseFlower />} path="browseflower" />
+            <Route
+              element={<BrowseFlorist />}
+              path="browseflorist/:flowername"
+            />
             <Route element={<FloristList />} path="floristlist" />
 
-            <Route
-              element={<ResetPassword/>}
-              path="resetpassword"
-            />
+            <Route element={<ResetPassword />} path="resetpassword" />
           </Route>
 
           <Route
