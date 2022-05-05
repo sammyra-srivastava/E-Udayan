@@ -1,14 +1,17 @@
 import { Button, Container, Card, CardContent, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const AddFlorist = () => {
   const floristStyles = {
     background: "url(https://wallpaperaccess.com/full/1223823.jpg)",
     height: "100%",
   };
+
+  const [selImage, setSelImage] = useState("");
 
   const url = app_config.backend_url;
 
@@ -21,10 +24,12 @@ const AddFlorist = () => {
     email: "",
     address: "",
     colour: "",
+    image: "",
   };
 
   //   2. Create a submit function
   const formSubmit = (formdata) => {
+    formdata.image = selImage;
     console.log(formdata);
 
     // 1. address
@@ -51,83 +56,110 @@ const AddFlorist = () => {
       });
   };
 
+  const uploadThumbnail = (e) => {
+    const file = e.target.files[0];
+    setSelImage(file.name);
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch(url + "/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        toast.success("Image Uploaded!!", {
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
+          },
+        });
+      }
+    });
+  };
+
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
       <Card sx={{ minWidth: "400px" }}>
         <CardContent>
-      
-        <form onSubmit={handleSubmit}>
-          <div>
-            <TextField
-              className="w-50 mt-4"
-              variant="outlined"
-              label="Shop Name"
-              type="text"
-              id="shopName"
-              onChange={handleChange}
-              value={values.shopName}
-            />
-          </div>
-          <div>
-            <TextField
-              className="w-50 mt-4"
-              variant="outlined"
-              label="timings"
-              type="text"
-              id="timings"
-              onChange={handleChange}
-              value={values.timings}
-            />
-          </div>
-          <div>
-            <TextField
-              className="w-50 mt-4"
-              variant="outlined"
-              label="Email"
-              type="email"
-              id="email"
-              onChange={handleChange}
-              value={values.email}
-            />
-          </div>
-          <div>
-            <TextField
-              className="w-50 mt-4"
-              variant="outlined"
-              label="Mobile"
-              type="number"
-              id="mobile"
-              onChange={handleChange}
-              value={values.mobile}
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <TextField
+                className="w-50 mt-4"
+                variant="outlined"
+                label="Shop Name"
+                type="text"
+                id="shopName"
+                onChange={handleChange}
+                value={values.shopName}
+              />
+            </div>
+            <div>
+              <TextField
+                className="w-50 mt-4"
+                variant="outlined"
+                label="timings"
+                type="text"
+                id="timings"
+                onChange={handleChange}
+                value={values.timings}
+              />
+            </div>
+            <div>
+              <TextField
+                className="w-50 mt-4"
+                variant="outlined"
+                label="Email"
+                type="email"
+                id="email"
+                onChange={handleChange}
+                value={values.email}
+              />
+            </div>
+            <div>
+              <TextField
+                className="w-50 mt-4"
+                variant="outlined"
+                label="Mobile"
+                type="number"
+                id="mobile"
+                onChange={handleChange}
+                value={values.mobile}
+              />
+            </div>
 
-          <div>
-            <TextField
-              className="w-50 mt-4"
-              variant="outlined"
-              label="address"
-              type="text"
-              id="address"
-              multiline
-              rows={4}
-              onChange={handleChange}
-              value={values.address}
-            />
-          </div>
-          <div>
-            <Button
-              type="submit"
-              variant="contained"
-              className="mt-5"
-              color="success"
-            >
-              Submit
-            </Button>
-          </div>
-        </form>
-      
-      </CardContent>
+            <div>
+              <TextField
+                className="w-50 mt-4"
+                variant="outlined"
+                label="address"
+                type="text"
+                id="address"
+                multiline
+                rows={4}
+                onChange={handleChange}
+                value={values.address}
+              />
+            </div>
+            <div className="mt-4">
+              <label>Upload Display Image</label>
+              <input
+                type="file"
+                className="form-control"
+                onChange={uploadThumbnail}
+              />
+            </div>
+            <div>
+              <Button
+                type="submit"
+                variant="contained"
+                className="mt-5"
+                color="success"
+              >
+                Submit
+              </Button>
+            </div>
+          </form>
+        </CardContent>
       </Card>
     );
   };
