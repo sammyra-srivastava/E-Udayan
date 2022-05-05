@@ -19,6 +19,7 @@ import {
   Login,
   MoreVert,
   Subscriptions,
+  ShoppingCart,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { ListItemIcon, ListItemText } from "@mui/material";
@@ -26,11 +27,11 @@ import { useEffect, useState } from "react";
 
 const pages = [
   {
-    name: "Florist",
+    name: "Shop",
     link: "/main/browseflorist",
   },
   {
-    name: "Flowers",
+    name: "Catalogue",
     link: "/main/browseflower",
   },
   {
@@ -55,6 +56,11 @@ const guestUser = [
     link: "/main/signup",
     icon: <AppRegistration />,
   },
+  {
+    name: "Cart",
+    link: "",
+    icon: <ShoppingCart />,
+  },
 
 
 ];
@@ -78,7 +84,7 @@ const Header = () => {
   const logout = () => {
     setAnchorElUser(null);
     sessionStorage.removeItem("user");
-    navigate("/login");
+    navigate("/main/signin");
   };
 
   const userMenu = [
@@ -115,7 +121,8 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <div  >
+    <AppBar position="fixed" sx={{backgroundColor:"#ff00ff"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -200,7 +207,7 @@ const Header = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Remy Sharp" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png" />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -269,6 +276,7 @@ const Header = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    </div>
   );
 };
 export default Header;

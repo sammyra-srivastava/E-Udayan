@@ -1,57 +1,104 @@
-import React from 'react'
+import React from 'react' 
+import Container from '@mui/material/Container';
+import { Box } from '@mui/system';
+import Typography from '@mui/material/Typography';
 
 const Home = () => {
   return (
-    <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
- 
-  <div class="carousel-indicators">
-    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active" aria-current="true"
-      aria-label="Slide 1"></button>
-    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-
-  <div class="carousel-inner rounded-5 shadow-4-strong">
-    
-    <div class="carousel-item active">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100"
-        alt="Sunset Over the City" />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </div>
-
-  
-    <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100"
-        alt="Canyon at Nigh" />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-
+    <div
+    id="carouselVideoExample"
+    className="carousel slide carousel-fade"
+    data-mdb-ride="carousel"
+  >
    
-    <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100"
-        alt="Cliff Above a Stormy Sea" />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <div className="carousel-indicators">
+      <button
+        type="button"
+        data-mdb-target="#carouselVideoExample"
+        data-mdb-slide-to="0"
+        className="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-mdb-target="#carouselVideoExample"
+        data-mdb-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-mdb-target="#carouselVideoExample"
+        data-mdb-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+  
+   
+    <div className="carousel-inner">
+     
+      <div className="carousel-item active">
+        <video className="img-fluid" autoplay loop muted>
+          <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+        </video>
+        <div className="carousel-caption d-none d-md-block">
+          <h5>Send Flower like you mean it</h5>
+          <p>
+            Flowers are our inspiration to create lasting memories.
+          </p>
+        </div>
+      </div>
+  
+     
+      <div className="carousel-item">
+        <video className="img-fluid" autoplay loop muted>
+          <source src="https://mdbcdn.b-cdn.net/img/video/forest.mp4" type="video/mp4" />
+        </video>
+        <div className="carousel-caption d-none d-md-block">
+          <h5>Let's make beautiful flower a part of your life</h5>
+          <p>
+           When you think of flowers think of our's.
+          </p>
+        </div>
+      </div>
+  
+ 
+      <div className="carousel-item">
+        <video className="img-fluid" autoplay loop muted>
+          <source
+            src="https://mdbcdn.b-cdn.net/img/video/Agua-natural.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="carousel-caption d-none d-md-block">
+          <h5>Creative solution for all your floral meet</h5>
+          <p>
+            An impressive finest blossoms hand-picked especially for you to make your ocassion more auspasious.
+          </p>
+        </div>
       </div>
     </div>
+   
+    <button
+      className="carousel-control-prev"
+      type="button"
+      data-mdb-target="#carouselVideoExample"
+      data-mdb-slide="prev"
+    >
+      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span className="visually-hidden">Previous</span>
+    </button>
+    <button
+      className="carousel-control-next"
+      type="button"
+      data-mdb-target="#carouselVideoExample"
+      data-mdb-slide="next"
+    >
+      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+      <span className="visually-hidden">Next</span>
+    </button>
   </div>
   
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
   )
 }
 export default Home;
