@@ -122,7 +122,7 @@ const Header = () => {
 
   return (
     <div  >
-    <AppBar position="fixed" sx={{backgroundColor:"#ff00ff"}}>
+    <AppBar position="fixed" sx={{backgroundColor:"grey"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
