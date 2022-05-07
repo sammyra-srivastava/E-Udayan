@@ -1,7 +1,27 @@
 import React from 'react'
 import { Button,Container,Box} from "@mui/material";
 import Stack from '@mui/material/Stack';
-const browseFlower = () => {
+import app_config from "../../config";
+import { useState } from "react";
+
+const BrowseFlower = () => {
+  const url = app_config.backend_url;
+
+  const [flowerArray, setFlowerArray] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const fetchFlower = () => {
+    fetch(url + "/flower/getall")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setLoading(false);
+        setFlowerArray(data);
+      });
+  };
+
+
   return (
     <Container sx={{ mt: 8, mb:8 }} >
     <div className="row row-cols-1 row-cols-md-3 g-4">
@@ -246,4 +266,4 @@ const browseFlower = () => {
      }
     }
 
-export default browseFlower;
+export default BrowseFlower;

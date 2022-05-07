@@ -28,7 +28,7 @@ import { useEffect, useState } from "react";
 const pages = [
   {
     name: "Shop",
-    link: "/main/browseflorist",
+    link: "/main/browseflorist/:flowername",
   },
   {
     name: "Catalogue",
@@ -122,7 +122,7 @@ const Header = () => {
 
   return (
     <div  >
-    <AppBar position="fixed" sx={{backgroundColor:"grey"}}>
+    <AppBar position="static" sx={{backgroundColor:"grey"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

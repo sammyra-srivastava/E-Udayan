@@ -38,7 +38,7 @@ const Browseflorist = () => {
   return (
     <Container sx={{ mt: 8 }}>
       <Card
-        // style={{ width: "1000px", display: "flex", flexPosition: "row" }}
+        style={{ width: "1000px", display: "flex", flexPosition: "row" }}
         sx={{ mt: 5 }}
       >
         <Grid container spacing={5}>
