@@ -32,7 +32,7 @@ const FloristList = () => {
               href="/"
               className="card1"
               style={{
-                height: "15rem",
+                height: "20rem",
                 background:
                   "url(" +
                   "https://i.pinimg.com/originals/c8/a8/cf/c8a8cf28e2bc418808f2488043aac2e2.jpg" +
