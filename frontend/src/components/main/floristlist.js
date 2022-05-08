@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import app_config from "../../config";
-import "../stylesheet/floristlist.css";
+
 
 const FloristList = () => {
   const url = app_config.backend_url;
@@ -27,51 +27,78 @@ const FloristList = () => {
     if (!loading)
       return floristArray.map(
         ({ shopName, mobile, email, address, timings }) => (
-          <li>
-            <a
-              href="/"
-              className="card1"
-              style={{
-                height: "20rem",
-                background:
-                  "url(" +
-                  "https://i.pinimg.com/originals/c8/a8/cf/c8a8cf28e2bc418808f2488043aac2e2.jpg" +
-                  ")",
-              }}
-            >
-              {/* <img
-                src=
-                className="card__image"
-                alt=""
-              /> */}
-              <div className="card__overlay">
-                <div className="card__header">
-                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                    <path />
-                  </svg>
-                  <img
-                    className="card__thumb"
-                    src="https://www.designfreelogoonline.com/wp-content/uploads/2016/07/000742-flowers-logo-design-free-flower-logo-maker-03.png"
-                    alt=""
-                  />
-                  <div className="card__header-text">
-                    <h3 className="card__title1">The Florist Shop</h3>
-                  </div>
-                </div>
-                <div className="card__description">
-                  <h6>Timings : {timings}</h6>
-                  <h6>Mobile No : {mobile}</h6>
-                  {email ? <h6>Email : {email}</h6> : ""}
-                  <h6>Address : {address}</h6>
+          
+  <section  style={{backgroundColor: "#eee"}}>
+  <div class="container py-5">
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-12 col-xl-10">
+        <div class="card shadow-0 border rounded-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-3 col-xl-3 mb-3 mb-lg-0">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp" alt=""
+                    class="w-100" />
+                  <a href="#!">
+                    <div class="hover-overlay">
+                      <div class="mask" style={{backgroundColor: "rgba(253, 253, 253, 0.15)"}}></div>
+                    </div>
+                  </a>
                 </div>
               </div>
-            </a>
-          </li>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <h5>{shopName}</h5>
+                <div class="d-flex flex-row">
+                  <div class="text-danger mb-1 me-2">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                <div class="mt-1 mb-0 text-muted small">
+                <span class="text-primary"> • </span>
+                  <span style={{fontSize:"15px", color:"black"}}>Timing : {timings} </span>
+                  <br></br>
+                  <span class="text-primary"> • </span>
+                  <span style={{fontSize:"15px", color:"black"}}>Contact No: {mobile} </span>
+                  <br></br>
+                  <span class="text-primary"> • </span>
+                  <span style={{fontSize:"15px", color:"black"}}>Email : {email} </span>
+                  <br></br>
+                  <span class="text-primary"> • </span>
+                  <span style={{fontSize:"15px", color:"black"}}> Address: {address} </span>
+                  
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                <div class="d-flex flex-row align-items-center mb-1">
+                </div>
+                <h6 class="text-success">Free shipping</h6>
+                <div class="d-flex flex-column mt-4">
+                  <button class="btn btn-primary btn-sm" type="button">Details</button>
+                  <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                    Add to wishlist
+                  </button>
+                </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         )
       );
   };
 
-  return <ul className="cards">{displayData()}</ul>;
+  return (
+    <section  style={{backgroundColor: "#eee"}}>
+      <div class="container py-5">{displayData()}</div>
+    </section>
+  );
 };
+
 
 export default FloristList;

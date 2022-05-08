@@ -122,7 +122,7 @@ const Header = () => {
 
   return (
     <div  >
-    <AppBar position="static" sx={{backgroundColor:"grey"}}>
+    <AppBar position="static" sx={{backgroundColor:"#4e0263"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -131,7 +131,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            E-Udayaan
+            Neephur
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -171,6 +171,7 @@ const Header = () => {
             </Menu>
           </Box>
           <Typography
+           style={{color:"black"}}
             variant="h6"
             noWrap
             component="div"
@@ -194,7 +195,7 @@ const Header = () => {
               <Tooltip title={name}>
                 <IconButton
                   size="large"
-                  color="inherit"
+                  color= "inherit"
                   onClick={(e) => navigate(link)}
                   sx={{ mr: 2 }}
                 >
