@@ -33,7 +33,7 @@ const Browseflorist = () => {
       .then((data) => {
         console.log(data);
         setLoading(false);
-        setFloristArray(data);
+        setFloristArray(data);  
       });
   };
 

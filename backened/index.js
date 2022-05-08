@@ -9,6 +9,7 @@ const floristRouter = require("./routers/floristRouter");
 
 // import flower Router
 const flowerRouter = require("./routers/flowerRouter");
+const utilRouter = require("./routers/util");
 
 // initialize express app
 const app = express();
@@ -26,7 +27,7 @@ app.use(
 
 // this will parse the json data sent from client
 app.use(express.json());
-app.use(express.static('./static'));
+app.use(express.static("./static"));
 // middleware
 app.use("/user", userRouter);
 
@@ -35,6 +36,7 @@ app.use("/user", userRouter);
 app.use("/florist", floristRouter);
 
 app.use("/flower", flowerRouter);
+app.use("/util", utilRouter);
 
 // Route
 app.get("/", (req, res) => {

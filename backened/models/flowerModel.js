@@ -5,6 +5,7 @@ const schema = new mongoose.Schema({
   color: String,
   price_per_kg: Number,
   price_per_unit: Number,
+  image: String,
   addedBy: { type: mongoose.Types.ObjectId, ref: "florist" },
   createdAt: { type: Date, default: new Date() },
 });

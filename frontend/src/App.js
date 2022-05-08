@@ -23,6 +23,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
 import UserAuthenticator from "./components/userAuthenticator";
 import { Toaster } from "react-hot-toast";
+import BrowseByFlorist from "./components/main/browseByFlorist";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
               path="browseflorist/:flowername"
             />
             <Route element={<FloristList />} path="floristlist" />
+            <Route element={<BrowseByFlorist />} path="browsebyflorist/:id" />
 
             <Route element={<ResetPassword />} path="resetpassword" />
           </Route>

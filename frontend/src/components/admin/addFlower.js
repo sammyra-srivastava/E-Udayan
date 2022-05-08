@@ -1,8 +1,9 @@
 import { Button, Container, Grid, Paper, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const AddFlower = ({ floristId }) => {
   const flowerStyles = {
@@ -11,6 +12,7 @@ const AddFlower = ({ floristId }) => {
   };
 
   const url = app_config.backend_url;
+  const [selImage, setSelImage] = useState("");
 
   //   1. Create the form object
 
@@ -20,10 +22,12 @@ const AddFlower = ({ floristId }) => {
     addedBy: floristId,
     price_per_kg: "",
     price_per_unit: "",
+    image: "",
   };
 
   //   2. Create a submit function
   const formSubmit = (formdata) => {
+    formdata.image = selImage;
     console.log(formdata);
 
     // 1. address
@@ -45,6 +49,27 @@ const AddFlower = ({ floristId }) => {
         console.log(data);
         // updateFlorist();
       });
+  };
+
+  const uploadImage = (e) => {
+    const file = e.target.files[0];
+    setSelImage(file.name);
+    const fd = new FormData();
+    fd.append("myfile", file);
+    fetch(url + "/util/uploadfile", {
+      method: "POST",
+      body: fd,
+    }).then((res) => {
+      if (res.status === 200) {
+        toast.success("Image Uploaded!!", {
+          style: {
+            borderRadius: "10px",
+            background: "#333",
+            color: "#fff",
+          },
+        });
+      }
+    });
   };
 
   const updateFlorist = (flowerId) => {
@@ -117,6 +142,9 @@ const AddFlower = ({ floristId }) => {
               value={values.price_per_unit}
             />
           </div>
+
+          <label>Upload Image</label>
+          <input className="form-control" onChange={uploadImage} type="file" />
 
           <div>
             <Button

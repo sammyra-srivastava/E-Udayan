@@ -41,6 +41,16 @@ router.delete("/delete/:id", (req, res) => {
     });
 });
 
+router.get("/getbyid/:id", (req, res) => {
+  Model.findById(req.params.id)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 router.get("/getbyflowername/:name", (req, res) => {
   Model.find({ "flowers.name": req.params.name })
     .then((data) => {

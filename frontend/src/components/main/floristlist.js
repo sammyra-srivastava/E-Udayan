@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import app_config from "../../config";
 import "../stylesheet/floristlist.css";
 
@@ -23,13 +24,18 @@ const FloristList = () => {
     fetchFlorist();
   }, []);
 
+  const navigate = useNavigate();
+
   const displayData = () => {
     if (!loading)
       return floristArray.map(
-        ({ shopName, mobile, email, address, timings }) => (
+        ({ _id, shopName, mobile, email, address, timings }) => (
           <li>
             <a
-              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate("/main/browsebyflorist/" + _id);
+              }}
               className="card1"
               style={{
                 height: "20rem",
