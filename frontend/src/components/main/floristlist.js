@@ -29,57 +29,6 @@ const FloristList = () => {
 
   const navigate = useNavigate();
 
-  const displayData2 = () => {
-    if (!loading)
-      return floristArray.map(
-        ({ _id, shopName, mobile, email, address, timings }) => (
-          <li>
-            <a
-              onClick={(e) => {
-                e.preventDefault();
-                navigate();
-              }}
-              className="card1"
-              style={{
-                height: "20rem",
-                background:
-                  "url(" +
-                  "https://i.pinimg.com/originals/c8/a8/cf/c8a8cf28e2bc418808f2488043aac2e2.jpg" +
-                  ")",
-              }}
-            >
-              {/* <img
-                src=
-                className="card__image"
-                alt=""
-              /> */}
-              <div className="card__overlay">
-                <div className="card__header">
-                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                    <path />
-                  </svg>
-                  <img
-                    className="card__thumb"
-                    src="https://www.designfreelogoonline.com/wp-content/uploads/2016/07/000742-flowers-logo-design-free-flower-logo-maker-03.png"
-                    alt=""
-                  />
-                  <div className="card__header-text">
-                    <h3 className="card__title1">The Florist Shop</h3>
-                  </div>
-                </div>
-                <div className="card__description">
-                  <h6>Timings : {timings}</h6>
-                  <h6>Mobile No : {mobile}</h6>
-                  {email ? <h6>Email : {email}</h6> : ""}
-                  <h6>Address : {address}</h6>
-                </div>
-              </div>
-            </a>
-          </li>
-        )
-      );
-  };
-
   const displayData = () => {
     if (!loading) {
       return floristArray.map(

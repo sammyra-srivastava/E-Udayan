@@ -18,6 +18,8 @@ import ManageFlorist from "./components/admin/manageFlorist";
 import ManageFlower from "./components/admin/manageFlower";
 import BrowseFlorist from "./components/main/browseflorist";
 import FloristList from "./components/main/floristlist";
+import Checkout from "./components/main/checkout";
+import ContactUs from "./components/main/contactUs";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
@@ -45,7 +47,6 @@ function App() {
             <Route element={<SignIn />} path="signin" />
             <Route element={<Home />} path="home" />
             <Route element={<NotFound />} path="404" />
-
             <Route element={<BrowseFlower />} path="browseflower" />
             <Route
               element={<BrowseFlorist />}
@@ -55,18 +56,13 @@ function App() {
             <Route element={<BrowseByFlorist />} path="browsebyflorist/:id" />
 
             <Route element={<ResetPassword />} path="resetpassword" />
+            <Route element={<Checkout />} path="checkout" />
+            <Route element={<ContactUs />} path="contactus" />
           </Route>
 
-          <Route
-            element={
-              <UserAuthenticator>
-                <User />
-              </UserAuthenticator>
-            }
-            path="user"
-          >
-            <Route element={<UserProfile></UserProfile>} path="userprofile" />
-            <Route element={<Sidebar></Sidebar>} path="sidebar" />
+          <Route element={<UserAuthenticator />} path="user">
+            <Route element={<UserProfile />} path="userprofile" />
+            <Route element={<Sidebar />} path="sidebar" />
           </Route>
 
           <Route element={<Navigate to="/main/home" />} path="" />

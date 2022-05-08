@@ -70,11 +70,11 @@ const Signin = () => {
       <Container>
         <Card
           style={{ borderRadius: 10, boxShadow: "4px 4px 4px 4px #89009c" }}
-          sx={{ mt: 15, mb: 10 }}
+          sx={{ mt: 8, mb: 10 }}
         >
           <Box style={{ display: "flex", float: "left" }}>
             <img
-              src="https://thumbs.dreamstime.com/b/florists-woman-her-flowers-shop-vector-illustration-florist-girl-flower-44402546.jpgg"
+              src="https://thumbs.dreamstime.com/b/florists-woman-her-flowers-shop-vector-illustration-florist-girl-flower-44402546.jpg"
               alt="cartoon"
             ></img>
           </Box>
