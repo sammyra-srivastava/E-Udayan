@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import app_config from "../../config";
 
 import { Card, CardContent, Container, Box, CardMedia } from "@mui/material";
@@ -11,6 +11,30 @@ import Button from "@mui/material/Button";
 import EmailIcon from "@mui/icons-material/Email";
 
 const FloristList = () => {
+  const url = app_config.backend_url;
+
+  const [floristArray, setFloristArray] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  const fetchFlorist = () => {
+    fetch(url + "/florist/getall/")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setLoading(false);
+        setFloristArray(data);
+      });
+  };
+
+  useEffect(() => {
+    fetchFlorist();
+  }, []);
+
+  const displayData = () => {
+    floristArray.map(({ shopName, mobile, email, address, timings }) => {});
+  };
+
   return (
     <Container sx={{ mt: 8 }}>
       <Card style={{ width: "1000px" }} sx={{ mt: 5 }}>

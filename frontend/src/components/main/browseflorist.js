@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import app_config from "../../config";
 
 import {
@@ -17,6 +17,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Browseflorist = () => {
   const url = app_config.backend_url;
@@ -24,9 +25,10 @@ const Browseflorist = () => {
   const [floristArray, setFloristArray] = useState([]);
 
   const [loading, setLoading] = useState(true);
+  const { flowername } = useParams();
 
   const fetchFlorist = () => {
-    fetch(url + "/florist/getall")
+    fetch(url + "/florist/getbyflowername/" + flowername)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -34,6 +36,10 @@ const Browseflorist = () => {
         setFloristArray(data);
       });
   };
+
+  useEffect(() => {
+    fetchFlorist();
+  }, []);
 
   return (
     <Container sx={{ mt: 8 }}>

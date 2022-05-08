@@ -254,6 +254,11 @@ const ManageFlorist = () => {
                   </Fab>
                 </Tooltip>
               </Stack>
+              <ul className="list-group">
+                {flowers.map(({ name }) => (
+                  <li>{name}</li>
+                ))}
+              </ul>
             </AccordionDetails>
           </Accordion>
         )

@@ -22,6 +22,7 @@ router.post("/add", (req, res) => {
 
 router.get("/getall", (req, res) => {
   Model.find({})
+    .populate("flowers")
     .then((data) => {
       res.status(200).json(data);
     })
@@ -34,6 +35,16 @@ router.delete("/delete/:id", (req, res) => {
   Model.findByIdAndDelete(req.params.id)
     .then((data) => {
       res.status(200).json({ message: "success" });
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.get("/getbyflowername/:name", (req, res) => {
+  Model.find({ "flowers.name": req.params.name })
+    .then((data) => {
+      res.status(200).json(data);
     })
     .catch((err) => {
       res.status(500).json(err);

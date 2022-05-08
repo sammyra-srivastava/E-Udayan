@@ -37,6 +37,7 @@ function App() {
             <Route element={<ManageFlorist />} path="managerflorist" />
             <Route element={<ManageFlower />} path="manageflower" />
             <Route element={<AdminProfile />} path="adminprofile" />
+            <Route element={<Dashboard />} path="dashboard" />
           </Route>
           <Route element={<Main />} path="main">
             <Route element={<Signup />} path="signup" />
