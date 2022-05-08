@@ -1,5 +1,5 @@
-import { Container, Box, TextField, Card, CardMedia, CardContent} from '@mui/material'
 import React from 'react'
+import { Container, Box, TextField, Card, CardMedia, CardContent} from '@mui/material'
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 
 const Checkout = () => {
   return (
+
    <Container style={{display:"flex", flexDirection: 'column' }} >
        <h1> checkout Page</h1>
        <Box style={{float:"left"}}>
