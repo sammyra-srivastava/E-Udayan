@@ -1,18 +1,8 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-html, body{
-  height: 100vh;
-}
+.current-back{
+  background: linear-gradient(to right, #0000009b, #000000ad), url(http://localhost:5000/images/florist_back.webp);
+  padding: 2rem;
+  text-shadow: 2px 2px 3px #0000005c;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+ }
