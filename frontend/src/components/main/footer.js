@@ -15,7 +15,7 @@ const Footer = () => {
   
   <div className="container p-4">
    
-    <section className="">
+    <section >
       <div className="row">
         
         <div className="col-lg-2 col-md-12 mb-4 mb-md-0">

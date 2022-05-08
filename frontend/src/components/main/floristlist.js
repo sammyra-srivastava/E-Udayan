@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import app_config from "../../config";
-
-import { Card, CardContent, Container, Box, CardMedia } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import AddBusinessIcon from "@mui/icons-material/AddBusiness";
-import CallIcon from "@mui/icons-material/Call";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import EmailIcon from "@mui/icons-material/Email";
+import "../stylesheet/floristlist.css";
 
 const FloristList = () => {
   const url = app_config.backend_url;
@@ -32,223 +24,54 @@ const FloristList = () => {
   }, []);
 
   const displayData = () => {
-    floristArray.map(({ shopName, mobile, email, address, timings }) => {});
+    if (!loading)
+      return floristArray.map(
+        ({ shopName, mobile, email, address, timings }) => (
+          <li>
+            <a
+              href="/"
+              className="card1"
+              style={{
+                height: "15rem",
+                background:
+                  "url(" +
+                  "https://i.pinimg.com/originals/c8/a8/cf/c8a8cf28e2bc418808f2488043aac2e2.jpg" +
+                  ")",
+              }}
+            >
+              {/* <img
+                src=
+                className="card__image"
+                alt=""
+              /> */}
+              <div className="card__overlay">
+                <div className="card__header">
+                  <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                    <path />
+                  </svg>
+                  <img
+                    className="card__thumb"
+                    src="https://www.designfreelogoonline.com/wp-content/uploads/2016/07/000742-flowers-logo-design-free-flower-logo-maker-03.png"
+                    alt=""
+                  />
+                  <div className="card__header-text">
+                    <h3 className="card__title1">The Florist Shop</h3>
+                  </div>
+                </div>
+                <div className="card__description">
+                  <h6>Timings : {timings}</h6>
+                  <h6>Mobile No : {mobile}</h6>
+                  {email ? <h6>Email : {email}</h6> : ""}
+                  <h6>Address : {address}</h6>
+                </div>
+              </div>
+            </a>
+          </li>
+        )
+      );
   };
 
-  return (
-    <Container sx={{ mt: 8 }}>
-      <Card style={{ width: "1000px" }} sx={{ mt: 5 }}>
-        <Container sx={{ color: "text.primary" }}>
-          <CardContent>
-            <Box sx={{ mt: 1 }}>
-              <AddBusinessIcon />
-              <Typography>Shop Name</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <CallIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <EmailIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <AccessTimeIcon />
-              <Typography>Timings</Typography>
-            </Box>
-
-            <Stack
-              spacing={3}
-              direction="row"
-              style={{ display: "flex", justifyContent: "flex-end" }}
-            >
-              <Button variant="contained" style={{ cursor: "pointer" }}>
-                VISIT
-              </Button>
-            </Stack>
-          </CardContent>
-        </Container>
-      </Card>
-      <Card style={{ width: "1000px" }} sx={{ mt: 5 }}>
-        <Container sx={{ color: "text.primary" }}>
-          <CardContent>
-            <Box sx={{ mt: 1 }}>
-              <AddBusinessIcon />
-              <Typography>Shop Name</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <CallIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <EmailIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <AccessTimeIcon />
-              <Typography>Timings</Typography>
-            </Box>
-
-            <Stack
-              spacing={3}
-              direction="row"
-              style={{ display: "flex", justifyContent: "flex-end" }}
-            >
-              <Button variant="contained" style={{ cursor: "pointer" }}>
-                VISIT
-              </Button>
-            </Stack>
-          </CardContent>
-        </Container>
-      </Card>
-      <Card style={{ width: "1000px" }} sx={{ mt: 5 }}>
-        <Container sx={{ color: "text.primary" }}>
-          <CardContent>
-            <Box sx={{ mt: 1 }}>
-              <AddBusinessIcon />
-              <Typography>Shop Name</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <CallIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <EmailIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <AccessTimeIcon />
-              <Typography>Timings</Typography>
-            </Box>
-
-            <Stack
-              spacing={3}
-              direction="row"
-              style={{ display: "flex", justifyContent: "flex-end" }}
-            >
-              <Button variant="contained" style={{ cursor: "pointer" }}>
-                VISIT
-              </Button>
-            </Stack>
-          </CardContent>
-        </Container>
-      </Card>
-      <Card style={{ width: "1000px" }} sx={{ mt: 5 }}>
-        <Container sx={{ color: "text.primary" }}>
-          <CardContent>
-            <Box sx={{ mt: 1 }}>
-              <AddBusinessIcon />
-              <Typography>Shop Name</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <CallIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <EmailIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <AccessTimeIcon />
-              <Typography>Timings</Typography>
-            </Box>
-
-            <Stack
-              spacing={3}
-              direction="row"
-              style={{ display: "flex", justifyContent: "flex-end" }}
-            >
-              <Button variant="contained" style={{ cursor: "pointer" }}>
-                VISIT
-              </Button>
-            </Stack>
-          </CardContent>
-        </Container>
-      </Card>
-      <Card style={{ width: "1000px" }} sx={{ mt: 5 }}>
-        <Container sx={{ color: "text.primary" }}>
-          <CardContent>
-            <Box sx={{ mt: 1 }}>
-              <AddBusinessIcon />
-              <Typography>Shop Name</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <CallIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <EmailIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <AccessTimeIcon />
-              <Typography>Timings</Typography>
-            </Box>
-
-            <Stack
-              spacing={3}
-              direction="row"
-              style={{ display: "flex", justifyContent: "flex-end" }}
-            >
-              <Button variant="contained" style={{ cursor: "pointer" }}>
-                VISIT
-              </Button>
-            </Stack>
-          </CardContent>
-        </Container>
-      </Card>
-      <Card style={{ width: "1000px" }} sx={{ mt: 5 }}>
-        <Container sx={{ color: "text.primary" }}>
-          <CardContent>
-            <Box sx={{ mt: 1 }}>
-              <AddBusinessIcon />
-              <Typography>Shop Name</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <CallIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <EmailIcon />
-              <Typography>Mobile No</Typography>
-            </Box>
-
-            <Box sx={{ mt: 1 }}>
-              <AccessTimeIcon />
-              <Typography>Timings</Typography>
-            </Box>
-
-            <Stack
-              spacing={3}
-              direction="row"
-              style={{ display: "flex", justifyContent: "flex-end" }}
-            >
-              <Button variant="contained" style={{ cursor: "pointer" }}>
-                VISIT
-              </Button>
-            </Stack>
-          </CardContent>
-        </Container>
-      </Card>
-    </Container>
-  );
+  return <ul className="cards">{displayData()}</ul>;
 };
 
 export default FloristList;
