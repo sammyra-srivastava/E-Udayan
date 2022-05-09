@@ -20,6 +20,7 @@ import BrowseFlorist from "./components/main/browseflorist";
 import FloristList from "./components/main/floristlist";
 import Checkout from "./components/main/checkout";
 import ContactUs from "./components/main/contactUs";
+import ShoppingCart from "./components/main/shoppingCart";
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar";
@@ -53,6 +54,7 @@ function App() {
             <Route element={<ResetPassword />} path="resetpassword" />
             <Route element={<Checkout/>} path="checkout" />
             <Route element={<ContactUs/>} path="contactus" />
+            <Route element={<ShoppingCart/>} path="cart" />
           </Route>
 
           <Route element={<UserAuthenticator/>}path="user">

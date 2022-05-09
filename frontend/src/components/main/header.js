@@ -38,6 +38,10 @@ const pages = [
     name: "Dashboard",
     link: "/admin/dashboard",
   },
+  {
+    name: "Contact Us",
+    link: "/main/contactUs",
+  },
 ];
 
 const guestUser = [
@@ -58,7 +62,7 @@ const guestUser = [
   },
   {
     name: "Cart",
-    link: "",
+    link: "/main/Cart",
     icon: <ShoppingCart />,
   },
 
@@ -171,13 +175,13 @@ const Header = () => {
             </Menu>
           </Box>
           <Typography
-           style={{color:"black"}}
+           style={{color:"white"}}
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            E-Udayaan
+            Neephur
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map(({ name, link }) => (

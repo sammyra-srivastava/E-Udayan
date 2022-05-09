@@ -11,6 +11,10 @@ import Swal from "sweetalert2";
 import React from "react";
 
 const ContactUs = () => {
+  const contactupStyles = {
+    background: "url(https://wallpaperaccess.com/full/1223823.jpg)",
+    height: "100%",
+  };
 
   const url = app_config.backend_url;
 
@@ -44,7 +48,7 @@ const ContactUs = () => {
         console.log(data);
         Swal.fire({
           icon: "success",
-          title: "Registered Successfully!!",
+          title: "Message Successfully Sent!!",
         });
       });
   };
@@ -117,8 +121,6 @@ const ContactUs = () => {
                    value={values.message}/>
                    </Stack>            
              
-          </form>
-
           <Stack sx={{mt:5}}>
         <Button 
         variant="contained" 
@@ -128,6 +130,8 @@ const ContactUs = () => {
         Send
         </Button>
         </Stack>
+          </form>
+
         </div>
 
         <div class="col-md-3 text-center">
