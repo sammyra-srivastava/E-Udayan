@@ -40,6 +40,26 @@ router.delete("/delete/:id", (req, res) => {
     });
 });
 
+router.get("/getbyid/:id", (req, res) => {
+  Model.findById(req.params.id)
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.put("/update/:id", (req, res) => {
+  Model.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    .then((data) => {
+      res.status(200).json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 router.post("/authenticate", (req, res) => {
   const formdata = req.body;
   console.log(formdata);

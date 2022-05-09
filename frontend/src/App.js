@@ -26,6 +26,7 @@ import Sidebar from "./components/sidebar";
 import UserAuthenticator from "./components/userAuthenticator";
 import { Toaster } from "react-hot-toast";
 import BrowseByFlorist from "./components/main/browseByFlorist";
+import Profile from "./components/user/profile";
 
 function App() {
   return (
@@ -60,8 +61,8 @@ function App() {
             <Route element={<ContactUs />} path="contactus" />
           </Route>
 
-          <Route element={<UserAuthenticator />} path="user">
-            <Route element={<UserProfile />} path="userprofile" />
+          <Route element={<User />} path="user">
+            <Route element={<Profile />} path="profile" />
             <Route element={<Sidebar />} path="sidebar" />
           </Route>
 

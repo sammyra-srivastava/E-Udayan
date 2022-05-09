@@ -2,7 +2,7 @@ import { Button, InputAdornment, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import app_config from "../../config";
-import "../stylesheet/floristlist.css";
+// import "../stylesheet/floristlist.css";
 import { Search } from "@mui/icons-material";
 
 const FloristList = () => {
