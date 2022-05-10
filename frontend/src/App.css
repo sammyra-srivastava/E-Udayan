@@ -1,38 +1,16 @@
-.App {
-  text-align: center;
+.add-florist-back{
+  height: 100vh;
+  background: url(http://localhost:5000/images/add_florist.webp);
+  background-size: cover;
+  padding-top: 5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.add-florist-header{
+  background: linear-gradient(to right, #0000007b, #0000007b), url(http://localhost:5000/images/add_florist.webp);
+  padding: 5rem 3rem;
+  background-size: cover;
+  background-position: bottom;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-shadow: 2px 2px 1px black;
+  background-attachment: fixed;
 }

@@ -1,4 +1,11 @@
-import { Button, Container, Card, CardContent, TextField } from "@mui/material";
+import {
+  Button,
+  Container,
+  Card,
+  CardContent,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import { Formik } from "formik";
 import app_config from "../../config";
@@ -79,12 +86,12 @@ const AddFlorist = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Card sx={{ minWidth: "400px" }}>
+      <Card>
         <CardContent>
           <form onSubmit={handleSubmit}>
             <div>
               <TextField
-                className="w-50 mt-4"
+                className="w-100 mt-4"
                 variant="outlined"
                 label="Shop Name"
                 type="text"
@@ -165,11 +172,17 @@ const AddFlorist = () => {
   };
 
   return (
-    <Container sx={styles.container}>
-      <Formik initialValues={addForm} onSubmit={formSubmit}>
-        {formBody}
-      </Formik>
-    </Container>
+    <div className="add-florist-back">
+      <Container>
+        <header className="add-florist-header">
+          <Typography variant="h4">Neephur</Typography>
+          <Typography variant="h2">Add New Florist</Typography>
+        </header>
+        <Formik initialValues={addForm} onSubmit={formSubmit}>
+          {formBody}
+        </Formik>
+      </Container>
+    </div>
   );
 };
 
