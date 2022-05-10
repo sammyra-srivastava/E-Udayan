@@ -12,6 +12,9 @@ const flowerRouter = require("./routers/flowerRouter");
 const utilRouter = require("./routers/util");
 const orderRouter = require("./routers/orderRouter");
 
+// import contact Router
+const contactRouter = require("./routers/contactRouter");
+
 // initialize express app
 const app = express();
 
@@ -39,6 +42,8 @@ app.use("/florist", floristRouter);
 app.use("/flower", flowerRouter);
 app.use("/util", utilRouter);
 app.use("/order", orderRouter);
+
+app.use("/contact", contactRouter);
 
 // Route
 app.get("/", (req, res) => {
