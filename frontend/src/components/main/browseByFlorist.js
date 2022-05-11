@@ -38,6 +38,10 @@ const BrowseByFlorist = () => {
     fetchFlowers();
   }, []);
 
+  const filterData = () => {
+    
+  }
+
   const displayData = () => {
     if (!loading) {
       return (
