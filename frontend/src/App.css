@@ -1,16 +1,17 @@
 .add-florist-back{
-  height: 100vh;
-  background: url(http://localhost:5000/images/add_florist.webp);
+  height:"100%";
+  background-image: url("https://media.istockphoto.com/photos/pink-cherry-flower-picture-id638082844?k=20&m=638082844&s=612x612&w=0&h=PuodgVRJbqvrSfOz970i4gm4oa02ceRkg_8G-fH3gvI=");
   background-size: cover;
-  padding-top: 5rem;
+  background-repeat: no-repeat;
+  opacity:0.8;
 }
-
-.add-florist-header{
-  background: linear-gradient(to right, #0000007b, #0000007b), url(http://localhost:5000/images/add_florist.webp);
-  padding: 5rem 3rem;
+.add-florist-headert{
+  background-image: linear-gradient(to right , rgba(255, 139, 211, 0.873),rgb(253, 224, 224))url("https://img.freepik.com/free-photo/spring-background-cherry-blossom-trees-white-sakura-flowers-green-leaves_72482-725.jpg?w=2000");
+  padding:  2rem 3rem;
   background-size: cover;
-  background-position: bottom;
-  color: white;
-  text-shadow: 2px 2px 1px black;
-  background-attachment: fixed;
+  text-shadow: 3px 2px black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.text-box-add-florist{
+  background-color: rgba(255, 172, 222, 0.36);
 }

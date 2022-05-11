@@ -5,6 +5,7 @@ import {
   CardContent,
   TextField,
   Typography,
+  Box,
 } from "@mui/material";
 import React, { useState } from "react";
 import { Formik } from "formik";
@@ -22,7 +23,6 @@ const AddFlorist = () => {
 
   const url = app_config.backend_url;
 
-  //   1. Create the form object
 
   const addForm = {
     shopName: "",
@@ -34,17 +34,12 @@ const AddFlorist = () => {
     image: "",
   };
 
-  //   2. Create a submit function
+  
   const formSubmit = (formdata) => {
     formdata.image = selImage;
     console.log(formdata);
 
-    // 1. address
-    // 2. request method
-    // 3. data
-    // 4. data format to send
-
-    // asynchronous function returns promise
+    
     fetch(url + "/florist/add", {
       method: "POST",
       body: JSON.stringify(formdata),
@@ -86,88 +81,96 @@ const AddFlorist = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Card>
-        <CardContent>
+      <Box style={{display:"flex",boxSizing:"content-box"}} >
+        <CardContent className="text-box-add-florist" >
           <form onSubmit={handleSubmit}>
             <div>
+              <h6 style={{color:"black"}}>Shop Name</h6>
               <TextField
-                className="w-100 mt-4"
-                variant="outlined"
-                label="Shop Name"
+                className="w-100 mb-1"
+                variant="standard"                
                 type="text"
                 id="shopName"
+                
                 onChange={handleChange}
                 value={values.shopName}
               />
             </div>
+            <br></br>
             <div>
+            <h6 style={{color:"black"}}>Timings</h6>
               <TextField
-                className="w-50 mt-4"
-                variant="outlined"
-                label="timings"
+                className="w-100 mb-1"
+                variant="standard"
                 type="text"
                 id="timings"
+               
                 onChange={handleChange}
                 value={values.timings}
               />
             </div>
+            <br></br>
             <div>
+            <h6 style={{color:"black"}}>Email Id</h6>
               <TextField
-                className="w-50 mt-4"
-                variant="outlined"
-                label="Email"
+                className="w-100 mb-1"
+                variant="standard"
                 type="email"
                 id="email"
+                
                 onChange={handleChange}
                 value={values.email}
               />
             </div>
+            <br></br>
             <div>
+            <h6 style={{color:"black"}}>Contact No</h6>
               <TextField
-                className="w-50 mt-4"
-                variant="outlined"
-                label="Mobile"
+                className="w-100 mb-1"
+                variant="standard"
                 type="number"
                 id="mobile"
+                
                 onChange={handleChange}
                 value={values.mobile}
               />
             </div>
-
+            <br></br>
             <div>
+            <h6 style={{color:"black"}}>Address</h6>
               <TextField
-                className="w-50 mt-4"
-                variant="outlined"
-                label="address"
+                className="w-100 mb-1"
+                variant="standard"
                 type="text"
                 id="address"
+                
                 multiline
-                rows={4}
+                rows={2}
                 onChange={handleChange}
                 value={values.address}
               />
             </div>
-            <div className="mt-4">
-              <label>Upload Display Image</label>
+            <div className=" w-100 "sx={{mb:2, mt:2}}>
+              <label style={{color:"black"}}>Upload Display Image</label>
               <input
                 type="file"
                 className="form-control"
                 onChange={uploadThumbnail}
               />
             </div>
-            <div>
-              <Button
-                type="submit"
-                variant="contained"
-                className="mt-5"
-                color="success"
-              >
-                Submit
-              </Button>
+            <div >
+            <Button 
+            className=" mb-1 " 
+            variant="contained"
+            color="secondary"
+            style={{borderRadius:10, maxWidth:300}}
+            size="large" 
+            type="submit" 
+            sx={{mb:4, mt:3}}>Submit</Button>
             </div>
           </form>
         </CardContent>
-      </Card>
+      </Box>
     );
   };
 
@@ -175,7 +178,6 @@ const AddFlorist = () => {
     <div className="add-florist-back">
       <Container>
         <header className="add-florist-header">
-          <Typography variant="h4">Neephur</Typography>
           <Typography variant="h2">Add New Florist</Typography>
         </header>
         <Formik initialValues={addForm} onSubmit={formSubmit}>
@@ -186,13 +188,5 @@ const AddFlorist = () => {
   );
 };
 
-const styles = {
-  container: {
-    display: "flex",
-    justifyContent: "flex-centre",
-    alignItems: "center",
-    height: "100%",
-  },
-};
 
 export default AddFlorist;
