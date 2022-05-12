@@ -61,7 +61,7 @@ const Signup = () => {
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
      
-          <Container
+          <Card
             style={{
               display: "flex",
               justifyContent: "end",
@@ -70,7 +70,7 @@ const Signup = () => {
             }}
             sx={{ ml: 1, mr: 2, mt: 5, mb:5}}
           >
-            <Box>
+            <CardContent>
               <Box sx={{ m:"auto" }}>
                 <h2>Sign Up</h2>
               </Box>
@@ -170,8 +170,8 @@ const Signup = () => {
                 <LinkedInIcon />
                 <GitHubIcon />
               </Stack>
-            </Box>
-             </Container>
+            </CardContent>
+             </Card>
 
     );
   };
