@@ -63,11 +63,11 @@ const Signup = () => {
       <Container
         style={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "end",
           borderRadius: 5,
           boxShadow: "2px 2px 2px 2px #fce6ff",
         }}
-        sx={{ ml: 1, mr: 2, mt: 5 }}
+        sx={{ ml: 1, mr: 2, mt: 5, mb: 5 }}
       >
         <Box>
           <Box sx={{ m: "auto" }}>
@@ -169,9 +169,11 @@ const Signup = () => {
   };
 
   return (
-    <Formik initialValues={userForm} onSubmit={formSubmit}>
-      {formBody}
-    </Formik>
+    <Container className="signup-back">
+      <Formik initialValues={userForm} onSubmit={formSubmit}>
+        {formBody}
+      </Formik>
+    </Container>
   );
 };
 
