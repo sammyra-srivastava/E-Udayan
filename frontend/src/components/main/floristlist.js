@@ -73,10 +73,7 @@ const FloristList = () => {
                   </div>
                   <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                     <div class="d-flex flex-row align-items-center mb-1">
-                      <h4 class="mb-1 me-1">$13.99</h4>
-                      <span class="text-danger">
-                        <s>$20.99</s>
-                      </span>
+                      <h4 class="mb-1 me-1">WholeSale</h4>
                     </div>
                     <h6 class="text-success">Free shipping</h6>
                     <div class="d-flex flex-column mt-4">
@@ -106,7 +103,7 @@ const FloristList = () => {
   const filternews = () => {};
 
   return (
-    <div>
+    <div style={{ background: "#eee" }}>
       <header className="current-back">
         <Typography className="text-center text-white" variant="h5">
           Neephur

@@ -15,7 +15,7 @@ import Stack from "@mui/material/Stack";
 const Signin = () => {
   const url = app_config.backend_url;
   const clientId =
-  '707788443358-u05p46nssla3l8tmn58tpo9r5sommgks.apps.googleusercontent.com';
+    "707788443358-u05p46nssla3l8tmn58tpo9r5sommgks.apps.googleusercontent.com";
 
   const userForm = {
     email: "",
@@ -31,28 +31,15 @@ const Signin = () => {
       headers: { "Content-Type": "application/json" },
     }).then((res) => {
       if (res.status === 200) {
-        let timerInterval;
         Swal.fire({
           title: "Successfully Logged In!",
-          html: "You will be directed to home page <b></b> milliseconds.",
-          timer: 1000,
-          timerProgressBar: true,
-          didOpen: () => {
-            Swal.showLoading();
-            const b = Swal.getHtmlContainer().querySelector("b");
-            timerInterval = setInterval(() => {
-              b.textContent = Swal.getTimerLeft();
-            }, 100);
-          },
-          willClose: () => {
-            clearInterval(timerInterval);
-          },
+          icon: "success",
         });
 
         res.json().then((data) => {
           sessionStorage.setItem("user", JSON.stringify(data));
           if (data.isAdmin) {
-            navigate("/admin/dashboard");
+            navigate("/admin/addflorist");
             return;
           }
           navigate("/main/home");

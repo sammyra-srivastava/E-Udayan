@@ -28,12 +28,13 @@ import {
   Edit,
   ExpandMore,
   TitleSharp,
-} from "@mui/icons-material";import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
+} from "@mui/icons-material";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
 
-import IconButton from '@mui/material/IconButton';
+import IconButton from "@mui/material/IconButton";
 
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 
 const ManageFlorist = () => {
   const [loading, setLoading] = useState(true);
@@ -167,8 +168,6 @@ const ManageFlorist = () => {
                       <br></br>
                       <br></br>
 
-                      
-
                       <Button
                         type="submit"
                         className="btn btn-primary"
@@ -205,11 +204,15 @@ const ManageFlorist = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h4 style={{color:"purple"}}>{shopName}</h4>
+              <h4 style={{ color: "purple" }}>{shopName}</h4>
             </AccordionSummary>
             <AccordionDetails>
-              <h5 style={{fontFamily:"Times New Roman, Times, sans-serif"}}><b>Contact No:-</b> {mobile}</h5>
-              <h5 style={{fontFamily:"Times New Roman, Times, sans-serif"}}><b>Address:-</b> {address}</h5>
+              <h5 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
+                <b>Contact No:-</b> {mobile}
+              </h5>
+              <h5 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
+                <b>Address:-</b> {address}
+              </h5>
               <Stack direction="row" spacing={2}>
                 <Fab
                   size="medium"
@@ -249,35 +252,41 @@ const ManageFlorist = () => {
   return (
     <Container>
       <Stack spacing={5} direction="row">
-    <Typography  className="title-manage-"variant="h4" component="div"  gutterBottom>
-   Florist Information
-    </Typography>   
-    <header className="">
-      <Paper
-      component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center',width: 400,mt:3,mb:3 }}
-    > 
-
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="Search florist name"
-        inputProps={{ 'aria-label': 'search florist address' }}
-      />
-      <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-    </Paper>
-    </header>
-    </Stack>
-    <Box style={{borderRadius:4}}>
-    <div>
-      
-      {displayData()}
-    </div>
-    </Box>
+        <Typography
+          className="title-manage-"
+          variant="h4"
+          component="div"
+          gutterBottom
+        >
+          Florist Information
+        </Typography>
+        <header className="">
+          <Paper
+            component="form"
+            sx={{
+              p: "2px 4px",
+              display: "flex",
+              alignItems: "center",
+              width: 400,
+              mt: 3,
+              mb: 3,
+            }}
+          >
+            <InputBase
+              sx={{ ml: 1, flex: 1 }}
+              placeholder="Search florist name"
+              inputProps={{ "aria-label": "search florist address" }}
+            />
+            <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+          </Paper>
+        </header>
+      </Stack>
+      <Box style={{ borderRadius: 4 }}>
+        <div>{displayData()}</div>
+      </Box>
     </Container>
-    
-    
   );
 };
 export default ManageFlorist;

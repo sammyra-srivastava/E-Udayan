@@ -89,7 +89,7 @@ const Drawer = styled(MuiDrawer, {
 // Change Here
 export default function Sidebar({ children, options, title }) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
 
   const navigate = useNavigate();
 

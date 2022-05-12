@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import app_config from "../../config";
 import { ShoppingBag } from "@mui/icons-material";
+import toast from "react-hot-toast";
 
 const BrowseByFlorist = () => {
   const url = app_config.backend_url;
@@ -12,6 +13,8 @@ const BrowseByFlorist = () => {
   const { id } = useParams();
 
   const [loading, setLoading] = useState(true);
+
+  const [cart, setCart] = useState([]);
 
   const fetchFlorist = () => {
     fetch(url + "/florist/getbyid/" + id)
@@ -33,10 +36,21 @@ const BrowseByFlorist = () => {
       });
   };
 
+  const addToCart = (flower) => {
+    setCart([
+      ...cart,
+      { item: flower, qty: 1, shopName: floristData.shopname },
+    ]);
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+    toast.success("Added to 🛒Cart");
+  };
+
   useEffect(() => {
     fetchFlorist();
     fetchFlowers();
   }, []);
+
+  const filterData = () => {};
 
   const displayData = () => {
     if (!loading) {
@@ -52,15 +66,25 @@ const BrowseByFlorist = () => {
     }
   };
 
+  const orderFlower = () => {};
+
   const displayFlowers = () => {
     if (!fLoading)
       return (
         <div className="row">
-          {flowerArray.map(({ name, color, price_per_kg, image }) => (
+          {flowerArray.map(({ _id, name, color, price_per_kg, image }) => (
             <div className="col-lg-4 col-md-12 mb-4">
               <div className="bg-image hover-zoom ripple shadow-1-strong rounded">
-                <img src={url + "/uploads/" + image} className="w-100" />
-                <a href="#!">
+                <img
+                  src={url + "/uploads/" + image}
+                  className="w-100"
+                  onClick={orderFlower}
+                />
+                <div
+                  onClick={(e) =>
+                    addToCart({ _id, name, color, price_per_kg, image })
+                  }
+                >
                   <div
                     className="mask"
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
@@ -79,7 +103,7 @@ const BrowseByFlorist = () => {
                       style={{ backgroundColor: "rgba(253, 253, 253, 0.15)" }}
                     ></div>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           ))}

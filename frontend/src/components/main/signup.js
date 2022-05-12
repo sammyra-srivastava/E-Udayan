@@ -60,6 +60,7 @@ const Signup = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
+<<<<<<< HEAD
      
           <Card
             style={{
@@ -173,14 +174,121 @@ const Signup = () => {
             </CardContent>
              </Card>
 
+=======
+      <Container
+        style={{
+          display: "flex",
+          justifyContent: "end",
+          borderRadius: 5,
+          boxShadow: "2px 2px 2px 2px #fce6ff",
+        }}
+        sx={{ ml: 1, mr: 2, mt: 5, mb: 5 }}
+      >
+        <Box>
+          <Box sx={{ m: "auto" }}>
+            <h2>Sign Up</h2>
+          </Box>
+          <p>
+            Have an existing account?{" "}
+            <Button variant="text" onClick={(e) => navigate("/main/signin")}>
+              Log In
+            </Button>
+          </p>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <h6>First Name</h6>
+              <TextField
+                className="w-100 "
+                variant="standard"
+                type="firstName"
+                id="firstName"
+                onChange={handleChange}
+                value={values.firstName}
+              />
+            </div>
+            <br></br>
+            <div>
+              <h6>Last Name</h6>
+              <TextField
+                className="w-100 "
+                variant="standard"
+                type="lastName"
+                id="lastName"
+                onChange={handleChange}
+                value={values.lastName}
+              />
+            </div>
+            <br></br>
+            <div>
+              <h6>Mobile No</h6>
+              <TextField
+                className="w-100 "
+                variant="standard"
+                type="mobile"
+                id="mobile"
+                onChange={handleChange}
+                value={values.mobile}
+              />
+            </div>
+            <br></br>
+            <div>
+              <h6>Email Address</h6>
+              <TextField
+                className="w-100 "
+                variant="standard"
+                type="email"
+                id="email"
+                onChange={handleChange}
+                value={values.email}
+              />
+            </div>
+            <br></br>
+            <div>
+              <h6>Password</h6>
+              <TextField
+                className="w-100 "
+                variant="standard"
+                type="password"
+                id="password"
+                onChange={handleChange}
+                value={values.password}
+              />
+            </div>
+            <FormGroup sx={{ mt: 1 }}>
+              <FormControlLabel control={<Checkbox />} label="Remember me" />
+            </FormGroup>
+            <Box sx={{ ml: 12 }}>
+              <Button
+                type="submit"
+                variant="contained"
+                className="mt-2 mb-2 "
+                color="secondary"
+                size="large"
+              >
+                Signup
+              </Button>
+            </Box>
+          </form>
+          <hr></hr>
+          <Stack direction="row" sx={{ ml: 7, color: "text.error" }}>
+            <GoogleIcon />
+            <FacebookOutlinedIcon />
+            <TwitterIcon />
+            <InstagramIcon />
+            <LinkedInIcon />
+            <GitHubIcon />
+          </Stack>
+        </Box>
+      </Container>
+>>>>>>> ced8aa09b3b137b419e7f987cafd46029f1ba4d7
     );
   };
 
   return (
     <Container className="signup-back">
-    <Formik initialValues={userForm} onSubmit={formSubmit}>
-      {formBody}
-    </Formik>
+      <Formik initialValues={userForm} onSubmit={formSubmit}>
+        {formBody}
+      </Formik>
     </Container>
   );
 };
