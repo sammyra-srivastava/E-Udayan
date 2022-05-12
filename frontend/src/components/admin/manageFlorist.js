@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import app_config from "../../config";
 import toast from "react-hot-toast";
 import {
+  Box,
+  Typography,
+  Container,
   Accordion,
   AccordionDetails,
   AccordionSummary,
@@ -24,9 +27,14 @@ import {
   DeleteRounded,
   Edit,
   ExpandMore,
-  Newspaper,
   TitleSharp,
 } from "@mui/icons-material";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+
+import IconButton from "@mui/material/IconButton";
+
+import SearchIcon from "@mui/icons-material/Search";
 
 const ManageFlorist = () => {
   const [loading, setLoading] = useState(true);
@@ -160,34 +168,6 @@ const ManageFlorist = () => {
                       <br></br>
                       <br></br>
 
-                      <TextField
-                        className="w-100 mt-3"
-                        label="Add News"
-                        multiline
-                        rows={4}
-                        variant="outlined"
-                        id="summary"
-                        onChange={handleChange}
-                        value={values.summary}
-                        error={Boolean(errors.summary)}
-                        helperText={errors.summary}
-                        aria-label="Add News"
-                        placeholder="Add News"
-                        InputProps={{
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <Newspaper
-                                sx={{
-                                  color: "active.active",
-                                  mr: 1,
-                                  my: 0.5,
-                                }}
-                              />
-                            </InputAdornment>
-                          ),
-                        }}
-                      />
-
                       <Button
                         type="submit"
                         className="btn btn-primary"
@@ -224,12 +204,15 @@ const ManageFlorist = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h4>{shopName}</h4>
+              <h4 style={{ color: "purple" }}>{shopName}</h4>
             </AccordionSummary>
             <AccordionDetails>
-              <h5>{email}</h5>
-
-              <h5>{address}</h5>
+              <h5 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
+                <b>Contact No:-</b> {mobile}
+              </h5>
+              <h5 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
+                <b>Address:-</b> {address}
+              </h5>
               <Stack direction="row" spacing={2}>
                 <Fab
                   size="medium"
@@ -240,7 +223,7 @@ const ManageFlorist = () => {
                 >
                   <DeleteRounded />
                 </Fab>
-                <Tooltip title="Update News Article">
+                <Tooltip title="Update address">
                   <Fab
                     size="medium"
                     color="success"
@@ -267,17 +250,43 @@ const ManageFlorist = () => {
   };
 
   return (
-    <div style={{ background: "#eee" }}>
-      <div className="container pt-5">
-        <div className="card">
-          <div className="card-header">
-            <h3 className="text-muted">Manage Florist</h3>
-          </div>
-          <div className="card-body">{displayData()}</div>
-          <div className="card-footer"></div>
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Stack spacing={5} direction="row">
+        <Typography
+          className="title-manage-"
+          variant="h4"
+          component="div"
+          gutterBottom
+        >
+          Florist Information
+        </Typography>
+        <header className="">
+          <Paper
+            component="form"
+            sx={{
+              p: "2px 4px",
+              display: "flex",
+              alignItems: "center",
+              width: 400,
+              mt: 3,
+              mb: 3,
+            }}
+          >
+            <InputBase
+              sx={{ ml: 1, flex: 1 }}
+              placeholder="Search florist name"
+              inputProps={{ "aria-label": "search florist address" }}
+            />
+            <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+          </Paper>
+        </header>
+      </Stack>
+      <Box style={{ borderRadius: 4 }}>
+        <div>{displayData()}</div>
+      </Box>
+    </Container>
   );
 };
 export default ManageFlorist;
