@@ -31,7 +31,7 @@ const pages = [
   },
   {
     name: "Catalogue",
-    link: "/main/browseflower",
+    link: "/main/floristlist",
   },
   {
     name: "Dashboard",

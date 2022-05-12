@@ -38,9 +38,7 @@ const BrowseByFlorist = () => {
     fetchFlowers();
   }, []);
 
-  const filterData = () => {
-    
-  }
+  const filterData = () => {};
 
   const displayData = () => {
     if (!loading) {
@@ -56,6 +54,8 @@ const BrowseByFlorist = () => {
     }
   };
 
+  const orderFlower = () => {};
+
   const displayFlowers = () => {
     if (!fLoading)
       return (
@@ -63,7 +63,11 @@ const BrowseByFlorist = () => {
           {flowerArray.map(({ name, color, price_per_kg, image }) => (
             <div className="col-lg-4 col-md-12 mb-4">
               <div className="bg-image hover-zoom ripple shadow-1-strong rounded">
-                <img src={url + "/uploads/" + image} className="w-100" />
+                <img
+                  src={url + "/uploads/" + image}
+                  className="w-100"
+                  onClick={orderFlower}
+                />
                 <a href="#!">
                   <div
                     className="mask"
