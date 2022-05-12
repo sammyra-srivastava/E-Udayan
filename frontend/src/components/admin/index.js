@@ -1,29 +1,36 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../sidebar";
-import { AccountCircle, AccountCircleOutlined } from "@mui/icons-material";
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
+import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
+import StoreIcon from '@mui/icons-material/Store';
+
+
+
 
 const Admin = () => {
   const options = [
     {
       name: "Add New Florist",
-      icon: <AccountCircle />,
+      icon: <AddBusinessIcon />,
       link: "/admin/addflorist",
     },
     {
       name: "Manage Florist",
-      icon: <AccountCircleOutlined />,
+      icon: <StoreIcon />,
       link: "/admin/managerflorist",
     },
     {
       name: "Manage Flowers",
-      icon: <AccountCircleOutlined />,
+      icon: <LocalFloristIcon />,
       link: "/admin/manageflower",
     },
   ];
 
+
   return (
     <Sidebar title="Admin Dashboard" options={options}>
+
       <Outlet />
     </Sidebar>
   );

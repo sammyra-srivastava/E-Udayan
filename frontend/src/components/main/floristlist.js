@@ -2,7 +2,6 @@ import { Button, InputAdornment, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import app_config from "../../config";
-// import "../stylesheet/floristlist.css";
 import { Search } from "@mui/icons-material";
 
 const FloristList = () => {
@@ -132,7 +131,7 @@ const FloristList = () => {
         </div>
       </header>
 
-      <div className="contained-fluid">
+      <div className="contained-fluid mt-5">
         <div className="row">
           <div className="col-md-3">
             <ul className="list-group">

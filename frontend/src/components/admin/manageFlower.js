@@ -10,6 +10,7 @@ import app_config from "../../config";
 import AddFlorist from "./addFlorist";
 import AddFlower from "./addFlower";
 
+
 const ManageFlower = () => {
   const [floristArray, setFloristArray] = useState([]);
   const [selFlorist, setSelFlorist] = useState("");
@@ -40,11 +41,17 @@ const ManageFlower = () => {
   };
 
   return (
-    <div>
-      <Container maxWidth="xxl">
+   
+      <div className="add-flower-back">
+      <header className="add-flower-header mb-4 ">
+        <p>
+          Add New Flowers
+        </p>
+        </header>
+      <Container maxWidth="xl">
         <div className="manageflower-top"></div>
         <div className="card">
-          <div className="card-body">
+          <div className="card-body" style={{display:"-ms-flexbox"}}>
             <FormControl fullWidth>
               <InputLabel id="select-florist">
                 Select Florist to Manage Flowers
@@ -65,7 +72,10 @@ const ManageFlower = () => {
           </div>
         </div>
       </Container>
-    </div>
+     </div>
+    
   );
 };
+
+
 export default ManageFlower;

@@ -55,12 +55,14 @@ const BrowseByFlorist = () => {
   const displayData = () => {
     if (!loading) {
       return (
+        <div className="container">
         <div className="card">
           {/* <img src={} alt="" className='card-img-top' /> */}
           <div className="card-body">
             <h1>{floristData.shopName}</h1>
-            <div className="container">{displayFlowers()}</div>
+            {displayFlowers()}
           </div>
+        </div>
         </div>
       );
     }

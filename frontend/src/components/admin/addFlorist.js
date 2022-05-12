@@ -4,8 +4,7 @@ import {
   Card,
   CardContent,
   TextField,
-  Typography,
-  Box,
+
 } from "@mui/material";
 import React, { useState } from "react";
 import { Formik } from "formik";
@@ -14,10 +13,6 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 const AddFlorist = () => {
-  const floristStyles = {
-    background: "url(https://wallpaperaccess.com/full/1223823.jpg)",
-    height: "100%",
-  };
 
   const [selImage, setSelImage] = useState("");
 
@@ -81,7 +76,7 @@ const AddFlorist = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Box style={{display:"flex",boxSizing:"content-box"}} >
+      <Card style={{maxWidth:700, margin:"auto"}} sx={{mb:4}}>
         <CardContent className="text-box-add-florist" >
           <form onSubmit={handleSubmit}>
             <div>
@@ -150,8 +145,9 @@ const AddFlorist = () => {
                 value={values.address}
               />
             </div>
+            <br></br>
             <div className=" w-100 "sx={{mb:2, mt:2}}>
-              <label style={{color:"black"}}>Upload Display Image</label>
+              <label style={{color:"black", marginBottom:2}}>Upload Display Image</label>
               <input
                 type="file"
                 className="form-control"
@@ -163,23 +159,26 @@ const AddFlorist = () => {
             className=" mb-1 " 
             variant="contained"
             color="secondary"
-            style={{borderRadius:10, maxWidth:300}}
+            style={{borderRadius:20,display:"flex",alignItem:"centre" }}
             size="large" 
             type="submit" 
-            sx={{mb:4, mt:3}}>Submit</Button>
+           
+            sx={{mt:3,}}>Submit</Button>
             </div>
           </form>
         </CardContent>
-      </Box>
+      </Card>
     );
   };
 
   return (
     <div className="add-florist-back">
-      <Container>
-        <header className="add-florist-header">
-          <Typography variant="h2">Add New Florist</Typography>
+      <header className="add-florist-header mb-5 ">
+        <p>
+          Add New Florist
+        </p>
         </header>
+      <Container>
         <Formik initialValues={addForm} onSubmit={formSubmit}>
           {formBody}
         </Formik>

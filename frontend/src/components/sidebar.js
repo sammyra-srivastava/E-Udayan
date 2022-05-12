@@ -15,9 +15,21 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { useNavigate } from "react-router-dom";
+import {
+  AppRegistration,
+  Home,
+  Login,
+  MoreVert,
+  AccountCircle,
+
+} from "@mui/icons-material";
+import { useEffect, useState } from "react";
+
+import Menu from "@mui/material/Menu";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
 
 const drawerWidth = 240;
 
@@ -88,6 +100,58 @@ const Drawer = styled(MuiDrawer, {
 
 // Change Here
 export default function Sidebar({ children, options, title }) {
+  const guestUser = [
+    {
+      name: "Home",
+      link: "/main/home",
+      icon: <Home />,
+    },
+    {
+      name: "Login",
+      link: "/main/signin",
+      icon: <Login />,
+    },
+    {
+      name: "Signup",
+      link: "/main/signup",
+      icon: <AppRegistration />,
+    },
+  ];
+
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const [anchorElGuest, setAnchorElGuest] = useState(null);
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const user = sessionStorage.getItem("user");
+
+  useEffect(() => {
+    setCurrentUser(JSON.parse(sessionStorage.getItem("user")));
+  }, [user]);
+
+  const logout = () => {
+    setAnchorElUser(null);
+    sessionStorage.removeItem("user");
+    navigate("/main/signin");
+  };
+
+  const userMenu = [
+    {
+      name: "Logout",
+      icon: <AccountCircle />,
+      click: logout,
+    },
+  ];
+
+ 
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
 
@@ -121,6 +185,99 @@ export default function Sidebar({ children, options, title }) {
           <Typography variant="h6" noWrap component="div">
             {title}
           </Typography>
+          <Box sx={{flexGrow:1}}></Box>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              {guestUser.map(({ name, link, icon }) => (
+                <Tooltip title={name}>
+                  <IconButton
+                    size="large"
+                    color="inherit"
+                    onClick={(e) => navigate(link)}
+                    sx={{ mr: 2 }}
+                  >
+                    {icon}
+                  </IconButton>
+                </Tooltip>
+              ))}
+            </Box>
+            {currentUser !== null && (
+              <Box sx={{ flexGrow: 0 }}>
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar
+                      alt="Remy Sharp"
+                      src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png"
+                    />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  {userMenu.map(({ name, icon, link, click }) => (
+                    <MenuItem
+                      key={name}
+                      onClick={link ? (e) => navigate(link) : click}
+                    >
+                      <ListItemIcon>{icon}</ListItemIcon>
+                      <ListItemText>{name}</ListItemText>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+            )}
+            <Box
+              sx={{ flexGrow: 0, ml: 3, display: { xs: "flex", md: "none" } }}
+            >
+              <Tooltip title="User Options">
+                <IconButton
+                  onClick={(e) => setAnchorElGuest(e.currentTarget)}
+                  sx={{ p: 0 }}
+                  color="inherit"
+                >
+                  <MoreVert />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElGuest}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElGuest)}
+                onClose={(e) => setAnchorElGuest(null)}
+              >
+                {guestUser.map(({ name, icon, link }) => (
+                  <MenuItem key={name} onClick={(e) => navigate(link)}>
+                    <ListItemIcon>{icon}</ListItemIcon>
+                    <ListItemText>{name}</ListItemText>
+                    <Avatar
+                      alt="Remy Sharp"
+                      src="/static/images/avatar/1.jpg"
+                    />
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

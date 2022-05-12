@@ -96,7 +96,7 @@ const ManageFlorist = () => {
   const updateForm = () => {
     if (showUpdateForm) {
       return (
-        <div>
+        <Container>
           <Card>
             <CardContent sx={{ width: 640 }}>
               <Formik
@@ -189,7 +189,7 @@ const ManageFlorist = () => {
               </Formik>
             </CardContent>
           </Card>
-        </div>
+          </Container>
       );
     }
   };
@@ -250,17 +250,17 @@ const ManageFlorist = () => {
   };
 
   return (
-    <Container>
-      <Stack spacing={5} direction="row">
+    <Container>    
+          <header>
+       <Box style={{flexGrow:1}}>
         <Typography
-          className="title-manage-"
+          className="title-manage"
           variant="h4"
           component="div"
           gutterBottom
         >
           Florist Information
         </Typography>
-        <header className="">
           <Paper
             component="form"
             sx={{
@@ -281,8 +281,8 @@ const ManageFlorist = () => {
               <SearchIcon />
             </IconButton>
           </Paper>
-        </header>
-      </Stack>
+        </Box>  
+          </header>
       <Box style={{ borderRadius: 4 }}>
         <div>{displayData()}</div>
       </Box>
