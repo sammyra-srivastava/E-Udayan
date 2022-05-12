@@ -26,10 +26,6 @@ import { useEffect, useState } from "react";
 
 const pages = [
   {
-    name: "Shop",
-    link: "/main/browseflorist/:flowername",
-  },
-  {
     name: "Catalogue",
     link: "/main/floristlist",
   },

@@ -267,9 +267,16 @@ const ManageFlorist = () => {
   };
 
   return (
-    <div>
-      <h1>Manage Florists</h1>
-      {displayData()}
+    <div style={{ background: "#eee" }}>
+      <div className="container pt-5">
+        <div className="card">
+          <div className="card-header">
+            <h3 className="text-muted">Manage Florist</h3>
+          </div>
+          <div className="card-body">{displayData()}</div>
+          <div className="card-footer"></div>
+        </div>
+      </div>
     </div>
   );
 };
