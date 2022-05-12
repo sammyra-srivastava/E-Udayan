@@ -60,21 +60,8 @@ const Signup = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Container style={{ width: 1000 }}>
-        <Card
-          style={{ borderRadius: 10, boxShadow: "4px 4px 4px 4px #89009c" }}
-          sx={{ mt: 15, mb: 10 }}
-        >
-          <Box
-            style={{ display: "flex", float: "left" }}
-            sx={{ mt: 5, mb: 5, ml: 5 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NjF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-              alt="cartoon"
-            ></img>
-          </Box>
-          <Box
+     
+          <Container
             style={{
               display: "flex",
               justifyContent: "center",
@@ -83,8 +70,8 @@ const Signup = () => {
             }}
             sx={{ ml: 1, mr: 2, mt: 5 }}
           >
-            <CardContent>
-              <Box sx={{ ml: 10 }}>
+            <Box>
+              <Box sx={{ m:"auto" }}>
                 <h2>Sign Up</h2>
               </Box>
               <p>
@@ -183,10 +170,9 @@ const Signup = () => {
                 <LinkedInIcon />
                 <GitHubIcon />
               </Stack>
-            </CardContent>
-          </Box>
-        </Card>
-      </Container>
+            </Box>
+          // </Container>
+
     );
   };
 
