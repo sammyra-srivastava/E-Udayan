@@ -141,14 +141,6 @@ const Home = () => {
                         ></i>
                       </div>
                     </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Extremely fast</h5>
-                      <p class="card-text">
-                        Enim cupiditate, minus nulla dolor cumque iure eveniet
-                        facere ullam beatae hic voluptatibus dolores
-                        exercitationem? Facilis debitis aspernatur amet nisi?
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
