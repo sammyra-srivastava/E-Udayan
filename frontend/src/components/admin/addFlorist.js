@@ -76,8 +76,9 @@ const AddFlorist = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Card style={{maxWidth:700, margin:"auto",}} sx={{mb:4,}}>
-        <CardContent className="text-box-add-florist" >
+      <Card style={{maxWidth:700, margin:"auto", background: "hsla(0, 0%, 100%, 0.7)",
+      backdropFilter: "blur(250px)"}} sx={{mb:4}}>
+        <CardContent >
           <form onSubmit={handleSubmit}>
             <div>
               <h6 style={{color:"black"}}>Shop Name</h6>
@@ -85,7 +86,7 @@ const AddFlorist = () => {
                 className="w-100 mb-1"
                 variant="standard"                
                 type="text"
-                id="shopName"
+                id="shopName" 
                 
                 onChange={handleChange}
                 value={values.shopName}

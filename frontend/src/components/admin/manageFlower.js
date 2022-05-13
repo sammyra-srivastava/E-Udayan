@@ -41,7 +41,7 @@ const ManageFlower = () => {
   };
 
   return (
-   
+      <div className="manage-flower-back">
       <div className="add-flower-back">
       <header className="add-flower-header mb-4 ">
         <p>
@@ -72,6 +72,7 @@ const ManageFlower = () => {
           </div>
         </div>
       </Container>
+     </div>
      </div>
     
   );

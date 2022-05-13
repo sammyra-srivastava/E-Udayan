@@ -1,6 +1,10 @@
 import { useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import app_config from "../../config";
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Home = () => {
   const url = app_config.api_url;
@@ -39,18 +43,23 @@ const Home = () => {
                 <div
                   class="card mx-4 mx-md-5 text-center shadow-5-strong"
                   style={{
-                    marginTop: "-170px",
+                    marginTop: "-150px",
                     background: "hsla(0, 0%, 100%, 0.7)",
-                    backdropFilter: "blur(30px)",
+                    backdropFilter: "blur(15px)",
                   }}
                 >
                   <div class="card-body px-4 py-5 px-md-5">
+                    <div style={{fontFamily:"'Calligraffitti', cursive" }}>
                     <h1 class="display-3 fw-bold ls-tight mb-4">
-                      <span>Choose the Best Broadband</span> <br />
-                      <span class="text-primary">for your needs</span>
+                      <span class="text-dark letter-spacing-3px">Send </span> 
+                      <span class="text-danger letter-spacing-3px"><b>flower</b></span><br/>
+                      <span class="text-dark letter-spacing-3px">like you mean it</span>
                     </h1>
+                    </div>
+                    <p class= "text-dark"> Flowers are our inspiration to create lasting memories,  </p>
+                    <p class="text-dark">Whatever the occassion ,our flowers will make it more auspicious for you. </p>
                     <button
-                      class="btn btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
+                      class="btn btn-secondary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
                       onClick={(e) => navigate("/main/signup")}
                       aria-controls="#picker-editor"
                       draggable="false"
@@ -59,8 +68,8 @@ const Home = () => {
                     </button>
                     <button
                       class="btn btn-link btn-lg py-3 px-5 mb-2 mb-md-0"
-                      data-ripple-color="primary"
-                      onClick={(e) => navigate("/main/login")}
+                      data-ripple-color="secondary"
+                      onClick={(e) => navigate("/main/contactus")}
                       aria-controls="#picker-editor"
                       draggable="false"
                     >
@@ -75,7 +84,7 @@ const Home = () => {
         <div data-draggable="true" class="" style={{ position: "relative" }}>
           <section draggable="false" class="container pt-5" data-v-271253ee="">
             <section class="mb-10 text-center">
-              <h2 class="fw-bold mb-9 text-center">Why is it so great?</h2>
+              <h1 class="fw-bold mb-9 text-center text-dark" >Why to choose us?</h1>
               <div class="row gx-lg-5">
                 <div class="col-lg-4 col-md-12 mb-8 mb-lg-0">
                   <div class="card shadow-2-strong h-100">
@@ -91,12 +100,9 @@ const Home = () => {
                       </div>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Support 24/7</h5>
-                      <p class="card-text">
-                        Laudantium totam quas cumque pariatur at doloremque hic
-                        quos quia eius. Reiciendis optio minus mollitia rerum
-                        labore facilis inventore voluptatem ad, quae quia sint.
-                        Ullam.
+                      <h5 class="card-title text-danger">Get in touch</h5>
+                      <p class="card-text text-dark">
+                       We listen about your needs. Creative solutions for all your floral needs, Where dreams become reality.
                       </p>
                     </div>
                   </div>
@@ -109,17 +115,15 @@ const Home = () => {
                     >
                       <div class="p-4 bg-primary rounded-circle shadow-5-strong d-inline-block">
                         <i
-                          class="fas fa-shield-alt fa-4x text-white"
+                          class="fas fa-american-sign-language-interpreting fa-4x text-white"
                           aria-controls="#picker-editor"
                         ></i>
                       </div>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Safe and solid</h5>
-                      <p class="card-text">
-                        Eum nostrum fugit numquam, voluptates veniam neque
-                        quibusdam ullam aspernatur odio soluta, quisquam dolore
-                        animi mollitia a omnis praesentium, expedita nobis!
+                      <h5 class="card-title text-danger">Turning Your Idea into floral wonder.</h5>
+                      <p class="card-text text-dark">
+                        Our experts have magic hands which picked fresh flower just for you, The best way to say that we care.
                       </p>
                     </div>
                   </div>
@@ -153,23 +157,24 @@ const Home = () => {
         </div>
         <div
           data-draggable="true"
-          class=""
+          class="container"
           style={{ position: "relative" }}
           draggable="false"
         >
           <section draggable="false" class="container pt-5" data-v-271253ee="">
-            <section class="mb-10 text-center">
-              <h2 class="fw-bold mb-5">Photographer</h2>
+            <section class="mb-10 text-center text-light">
+              <h1 class="fw-bold mb-5 text-dark">Our Hardworking Team</h1>
               <div
                 id="carouselExampleControls"
                 class="carousel slide carousel-dark carousel-fade"
                 data-mdb-ride="carousel"
               >
-                <div class="carousel-inner px-5 px-md-0">
+                <div class="carousel-inner px-5 px-md-0"style={{background: "hsla(0, 0%, 100%, 0.7)",
+                    backdropFilter: "blur(110px)"}} >
                   <div class="carousel-item active">
                     <img
-                      class="rounded-circle shadow-1-strong mb-4"
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg"
+                      class="rounded-circle shadow-1-strong mb-4 mt-4"
+                      src="http://localhost:5000/images/kumkum2.jpeg"
                       alt="avatar"
                       style={{ width: "150px", height: "150px" }}
                       aria-controls="#picker-editor"
@@ -177,11 +182,11 @@ const Home = () => {
                     />
                     <div class="row d-flex justify-content-center">
                       <div class="col-lg-8">
-                        <h5 class="mb-3">Maria Kate</h5>
-                        <p>Photographer</p>
+                        <h4 class="mb-3 text-dark">Kumkum Srivastava</h4>
+                        <h5  class="text-dark">Web Developer</h5>
                         <p class="text-muted">
                           <i class="fas fa-quote-left pe-2"></i>
-                          <span>
+                          <span class="text-dark">
                             In ac turpis justo. Vivamus auctor quam vitae odio
                             feugiat pulvinar. Sed semper ligula sed lorem
                             tincidunt dignissim. Nam sed cursus lectus. Proin
@@ -193,28 +198,11 @@ const Home = () => {
                         </p>
                       </div>
                     </div>
-                    <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="far fa-star fa-sm"></i>
-                      </li>
-                    </ul>
                   </div>
                   <div class="carousel-item">
                     <img
-                      class="rounded-circle shadow-1-strong mb-4"
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
+                      class="rounded-circle shadow-1-strong mb-4 mt-4"
+                      src="http://localhost:5000/images/abhishek.jpeg"
                       alt="avatar"
                       style={{ width: "150px", height: "150px" }}
                       aria-controls="#picker-editor"
@@ -222,8 +210,8 @@ const Home = () => {
                     />
                     <div class="row d-flex justify-content-center">
                       <div class="col-lg-8">
-                        <h5 class="mb-3">John Doe</h5>
-                        <p>Web Developer</p>
+                        <h4 class="mb-3 text-dark">Abhishek Gupta</h4>
+                        <h5 class="text-dark">UX/UI Developer</h5>
                         <p class="text-muted">
                           <i class="fas fa-quote-left pe-2"></i>
                           <span>
@@ -236,28 +224,11 @@ const Home = () => {
                         </p>
                       </div>
                     </div>
-                    <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="far fa-star fa-sm"></i>
-                      </li>
-                    </ul>
                   </div>
                   <div class="carousel-item">
                     <img
-                      class="rounded-circle shadow-1-strong mb-4"
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
+                      class="rounded-circle shadow-1-strong mb-4 mt-4"
+                      src="http://localhost:5000/images/geetanjali.jpeg"
                       alt="avatar"
                       style={{ width: "150px", height: "150px" }}
                       aria-controls="#picker-editor"
@@ -265,8 +236,8 @@ const Home = () => {
                     />
                     <div class="row d-flex justify-content-center">
                       <div class="col-lg-8">
-                        <h5 class="mb-3">Anna Deynah</h5>
-                        <p>UX Designer</p>
+                        <h4 class="mb-3 text-dark">Geetanjali Chaubey</h4>
+                        <h5 class="text-dark">Cyber Security Engineer</h5>
                         <p class="text-muted">
                           <i class="fas fa-quote-left pe-2"></i>
                           <span>
@@ -278,23 +249,32 @@ const Home = () => {
                         </p>
                       </div>
                     </div>
-                    <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="fas fa-star fa-sm"></i>
-                      </li>
-                      <li>
-                        <i class="far fa-star fa-sm"></i>
-                      </li>
-                    </ul>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="rounded-circle shadow-1-strong mb-4 mt-4"
+                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
+                      alt="avatar"
+                      style={{ width: "150px", height: "150px" }}
+                      aria-controls="#picker-editor"
+                      draggable="false"
+                    />
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-lg-8">
+                        <h5 class="mb-3 text-dark">Adarsh Tripathi</h5>
+                        <p class="text-dark">Photographer</p>
+                        <p class="text-muted">
+                          <i class="fas fa-quote-left pe-2"></i>
+                          <span>
+                            Maecenas auctor, quam eget tincidunt pretium, felis
+                            diam semper turpis, sed scelerisque diam libero
+                            facilisis libero. Quisque vitae semper metus.
+                            Aliquam eu dui aliquam, faucibus metus quis,
+                            elementum nunc. .
+                          </span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <button
@@ -335,16 +315,26 @@ const Home = () => {
                       class="my-4 display-3 fw-bold ls-tight"
                       style={{ color: "hsl(218, 81%, 95%)" }}
                     >
-                      <span>Do not miss</span> <br />
-                      <span style={{ color: "hsl(218, 81%, 75%)" }}>
+                      <span class="text-dark" style={{fontFamily:"Tapestry,serif"}}>Do not miss</span> <br />
+                      <span style={{ color: "purple", fontFamily:"Calligraffitti, cursive" }}>
                         any updates
                       </span>
                     </h1>
                     <p
                       class="mb-4 opacity-70 lead"
-                      style={{ color: "hsl(218, 81%, 85%)" }}
+                      style={{ color: "black",fontSize:"30px",fontWeight:"500px" }}
                     >
-                      We will write rarely and only high-quality content.
+                      Catch us on Social Media 
+                      <br/>
+                      <Stack direction="row" spacing={1} sx={{ml:7}}>
+                        <IconButton aria-label="Instagram"onClick={(e) => navigate("")} size="large" style={{cursor:"pointer", color:"black"}}>
+                          < InstagramIcon />
+                        </IconButton>
+                        <IconButton aria-label="facebook" onClick={(e) => navigate("")} size="large" style={{cursor:"pointer" ,color:"black"}}>
+                          < FacebookIcon/>
+                        </IconButton>
+                        </Stack>
+
                     </p>
                   </div>
                   <div class="col-lg-6 mb-5 mb-lg-0">
@@ -352,7 +342,7 @@ const Home = () => {
                       <div class="card-body py-5 px-md-5">
                         <div class="mb-5 text-center">
                           <h2 class="fw-bold mb-3">
-                            Subscribe to the newsletter
+                            Tell us Your Needs
                           </h2>
                         </div>
                         <form>
@@ -383,7 +373,7 @@ const Home = () => {
                           </div>
                           <div class="form-outline mb-4">
                             <input
-                              type="email"
+                              type="message"
                               id="form5Example2"
                               class="form-control"
                             />
@@ -392,7 +382,7 @@ const Home = () => {
                               for="form5Example2"
                               style={{ marginLeft: "0px" }}
                             >
-                              Email address
+                             Message
                             </label>
                             <div class="form-notch">
                               <div
@@ -406,24 +396,12 @@ const Home = () => {
                               <div class="form-notch-trailing"></div>
                             </div>
                           </div>
-                          <div class="form-check d-flex justify-content-center mb-4">
-                            <input
-                              class="form-check-input me-2"
-                              type="checkbox"
-                              value=""
-                              id="form5Example3"
-                              checked=""
-                            />
-                            <label class="form-check-label" for="form5Example3">
-                              I have read and agree to the terms
-                            </label>
-                          </div>
                           <button
                             type="submit"
-                            class="btn btn-primary btn-block mb-md-4"
+                            class="btn btn-secondary btn-block mb-md-4"
                             aria-controls="#picker-editor"
                           >
-                            Subscribe
+                            Send
                           </button>
                         </form>
                       </div>

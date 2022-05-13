@@ -57,12 +57,12 @@ const ContactUs = () => {
   const formBody = ({ values, handleSubmit, handleChange }) => {
   return (
     <Container >
-    <div class="mb-4"  >
-      <h2 class="h1-responsive font-weight-bold text-center my-4">
-        Contact us
-      </h2>
+    <div class="mb-4 " >
+      <p class=" font-weight-bold text-center my-4" style={{letterSpacing:"3px", color:"purple", fontSize:"70px", fontWeight:"200px", fontFamily:"'Calligraffitti', cursive"}} >
+        Get in Touch
+      </p>
 
-      <p class="text-center w-responsive mx-auto mb-5">
+      <p class="text-center w-responsive mx-auto mb-5" style={{letterSpacing:"3px",fontFamily:"Tapestry", color:"red", fontSize:"20px", fontWeight:"200px"}}>
         Do you have any questions? Please do not hesitate to contact us
         directly. Our team will come back to you within a matter of hours to
         help you.

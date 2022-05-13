@@ -78,7 +78,7 @@ const Signin = () => {
           >
             <CardContent>
               <Box sx={{ mt: 2, ml: 13 }}>
-                <h5>LOGIN</h5>
+                <h2>LOGIN</h2>
               </Box>
               <p>
                 Doesn't have an account yet?{" "}

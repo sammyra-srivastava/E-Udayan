@@ -8,7 +8,7 @@ const Dashboard = () => {
         <div className="col-md-3 mt-4">
           <div className="card border border-primary">
             <div className="card-header">
-              <p className="text-primary font-weight-bold">Users</p>
+              <p className="text-primary font-weight-bold">Flower</p>
             </div>
             <div className="card-body">
               <p className="display-4 text-muted">2,456</p>
