@@ -136,10 +136,16 @@ const Home = () => {
                     >
                       <div class="p-4 bg-primary rounded-circle shadow-5-strong d-inline-block">
                         <i
-                          class="fas fa-rocket fa-4x text-white"
+                          class="fas fa-snowflake fa-4x text-white"
                           aria-controls="#picker-editor"
                         ></i>
                       </div>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-danger">Making beautiful a part of your life</h5>
+                      <p class="card-text text-dark">
+                        We take flower personally and we bring you happiness. To share flowers is to share happiness.
+                      </p>
                     </div>
                   </div>
                 </div>
