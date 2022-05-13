@@ -76,7 +76,7 @@ const AddFlorist = () => {
 
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
-      <Card style={{maxWidth:700, margin:"auto"}} sx={{mb:4}}>
+      <Card style={{maxWidth:700, margin:"auto",}} sx={{mb:4,}}>
         <CardContent className="text-box-add-florist" >
           <form onSubmit={handleSubmit}>
             <div>

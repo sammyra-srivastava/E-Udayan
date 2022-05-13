@@ -106,16 +106,7 @@ export default function Sidebar({ children, options, title }) {
       link: "/main/home",
       icon: <Home />,
     },
-    {
-      name: "Login",
-      link: "/main/signin",
-      icon: <Login />,
-    },
-    {
-      name: "Signup",
-      link: "/main/signup",
-      icon: <AppRegistration />,
-    },
+  
   ];
 
   const [anchorElUser, setAnchorElUser] = useState(null);

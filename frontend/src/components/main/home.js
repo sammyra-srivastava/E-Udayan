@@ -8,6 +8,7 @@ const Home = () => {
   useEffect(() => {}, []);
 
   return (
+    <div className="home-back">
     <div id="preview" class="preview">
       <div style={{ display: "none" }}></div>
       <div>
@@ -434,6 +435,7 @@ const Home = () => {
           </section>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -207,12 +207,12 @@ const ManageFlorist = () => {
               <h4 style={{ color: "purple" }}>{shopName}</h4>
             </AccordionSummary>
             <AccordionDetails>
-              <h5 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
+              <h4 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
                 <b>Contact No:-</b> {mobile}
-              </h5>
-              <h5 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
+              </h4>
+              <h4 style={{ fontFamily: "Times New Roman, Times, sans-serif" }}>
                 <b>Address:-</b> {address}
-              </h5>
+              </h4>
               <Stack direction="row" spacing={2}>
                 <Fab
                   size="medium"
@@ -252,22 +252,16 @@ const ManageFlorist = () => {
   return (
     <Container>    
           <header>
-       <Box style={{flexGrow:1}}>
-        <Typography
-          className="title-manage"
-          variant="h4"
-          component="div"
-          gutterBottom
-        >
-          Florist Information
-        </Typography>
+            <Box style={{flexGrow:1}}></Box>
+       <p className="manage-florist-header">Florist Information</p>
+        <Box>
           <Paper
             component="form"
             sx={{
               p: "2px 4px",
               display: "flex",
               alignItems: "center",
-              width: 400,
+              minWidth: 600,
               mt: 3,
               mb: 3,
             }}

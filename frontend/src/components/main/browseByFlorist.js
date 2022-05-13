@@ -55,11 +55,14 @@ const BrowseByFlorist = () => {
   const displayData = () => {
     if (!loading) {
       return (
-        <div className="container">
-        <div className="card">
-          {/* <img src={} alt="" className='card-img-top' /> */}
+        <div className="container mt-3 mb-5" >
+        <div className="card"style={{backgroundColor:"#d6fff8"}}>
+         
           <div className="card-body">
-            <h1>{floristData.shopName}</h1>
+            <h1 style={{fontFamily:"monospace", color:"purple"}}>{floristData.shopName}</h1>
+            <h6 style={{fontFamily:"Times New Roman"}}>Timings :- {floristData.timings}</h6>
+            <h6 style={{ fontFamily:"Times New Roman"}}>Contact info:- {floristData.mobile}</h6>
+            <h6 style={{ fontFamily:"Times New Roman"}} >Address:- {floristData.address}</h6>
             {displayFlowers()}
           </div>
         </div>
@@ -78,10 +81,7 @@ const BrowseByFlorist = () => {
             <div className="col-lg-4 col-md-12 mb-4">
               <div className="bg-image hover-zoom ripple shadow-1-strong rounded">
                 <img
-                  src={url + "/uploads/" + image}
-                  className="w-100"
-                  onClick={orderFlower}
-                />
+                  src={url + "/uploads/" + image} className="w-100" onClick={orderFlower}/>
                 <div
                   onClick={(e) =>
                     addToCart({ _id, name, color, price_per_kg, image })
