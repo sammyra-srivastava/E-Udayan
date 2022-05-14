@@ -142,7 +142,7 @@ const Home = () => {
                       </div>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title text-danger">Making beautiful a part of your life</h5>
+                      <h5 class="card-title text-danger">Making beautiful flower a part of your life</h5>
                       <p class="card-text text-dark">
                         We take flower personally and we bring you happiness. To share flowers is to share happiness.
                       </p>
@@ -251,7 +251,7 @@ const Home = () => {
                   <div class="carousel-item">
                     <img
                       class="rounded-circle shadow-1-strong mb-4 mt-4"
-                      src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
+                      src="http://localhost:5000/images/adarsh.jpeg"
                       alt="avatar"
                       style={{ width: "150px", height: "150px" }}
                       aria-controls="#picker-editor"
