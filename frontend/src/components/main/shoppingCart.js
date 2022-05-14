@@ -9,6 +9,7 @@ const ShoppingCart = () => {
 
   const displayCart = () => {
     console.log(cartData);
+    if (cartData === null) return <p></p>;
     return cartData.map(({ item, qty, shopName }) => (
       <tr>
         <td class="col-sm-8 col-md-6">
