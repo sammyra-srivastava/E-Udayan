@@ -28,6 +28,8 @@ import UserAuthenticator from "./components/userAuthenticator";
 import { Toaster } from "react-hot-toast";
 import BrowseByFlorist from "./components/main/browseByFlorist";
 import Profile from "./components/user/profile";
+import ManageOrder from "./components/user/manageOrder";
+import AdminAuthenticator from "./components/adminAuthenticator";
 
 function App() {
   return (
@@ -35,7 +37,14 @@ function App() {
       <BrowserRouter>
         <Toaster position="top-center" />
         <Routes>
-          <Route element={<Admin />} path="admin">
+          <Route
+            element={
+              <AdminAuthenticator>
+                <Admin />
+              </AdminAuthenticator>
+            }
+            path="admin"
+          >
             <Route element={<AddFlorist />} path="addflorist" />
             <Route element={<Dashboard />} path="dashboard" />
             <Route element={<ManageUser />} path="manageuser" />
@@ -60,12 +69,20 @@ function App() {
             <Route element={<ResetPassword />} path="resetpassword" />
             <Route element={<Checkout />} path="checkout" />
             <Route element={<ContactUs />} path="contactus" />
-            <Route element={<ShoppingCart />} path="cart" />
+            <Route
+              element={
+                <UserAuthenticator>
+                  <ShoppingCart />
+                </UserAuthenticator>
+              }
+              path="cart"
+            />
           </Route>
 
           <Route element={<User />} path="user">
             <Route element={<Profile />} path="profile" />
             <Route element={<Sidebar />} path="sidebar" />
+            <Route element={<ManageOrder />} path="manageorder" />
           </Route>
 
           <Route element={<Navigate to="/main/home" />} path="" />

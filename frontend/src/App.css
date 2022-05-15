@@ -63,3 +63,9 @@
   font-family: 'Calligraffitti', cursive;
   letter-spacing: 3px;
 }
+
+body{
+  background: url(http://localhost:5000/images/main_back.png);
+  background-size: cover;
+  min-height: 100vh;
+}

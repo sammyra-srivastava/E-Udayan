@@ -29,10 +29,10 @@ const pages = [
     name: "Catalogue",
     link: "/main/floristlist",
   },
-  {
-    name: "Dashboard",
-    link: "/admin/dashboard",
-  },
+  // {
+  //   name: "Dashboard",
+  //   link: "/admin/dashboard",
+  // },
   {
     name: "Contact Us",
     link: "/main/contactUs",

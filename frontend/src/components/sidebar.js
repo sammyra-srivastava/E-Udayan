@@ -22,7 +22,6 @@ import {
   Login,
   MoreVert,
   AccountCircle,
-
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 
@@ -106,7 +105,6 @@ export default function Sidebar({ children, options, title }) {
       link: "/main/home",
       icon: <Home />,
     },
-  
   ];
 
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -134,11 +132,9 @@ export default function Sidebar({ children, options, title }) {
     },
   ];
 
- 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
@@ -159,7 +155,7 @@ export default function Sidebar({ children, options, title }) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{ backgroundColor: "#4e0263" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -176,75 +172,35 @@ export default function Sidebar({ children, options, title }) {
           <Typography variant="h6" noWrap component="div">
             {title}
           </Typography>
-          <Box sx={{flexGrow:1}}></Box>
+          <Box sx={{ flexGrow: 1 }}></Box>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              {guestUser.map(({ name, link, icon }) => (
-                <Tooltip title={name}>
-                  <IconButton
-                    size="large"
-                    color="inherit"
-                    onClick={(e) => navigate(link)}
-                    sx={{ mr: 2 }}
-                  >
-                    {icon}
-                  </IconButton>
-                </Tooltip>
-              ))}
-            </Box>
-            {currentUser !== null && (
-              <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png"
-                    />
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {userMenu.map(({ name, icon, link, click }) => (
-                    <MenuItem
-                      key={name}
-                      onClick={link ? (e) => navigate(link) : click}
-                    >
-                      <ListItemIcon>{icon}</ListItemIcon>
-                      <ListItemText>{name}</ListItemText>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </Box>
-            )}
-            <Box
-              sx={{ flexGrow: 0, ml: 3, display: { xs: "flex", md: "none" } }}
-            >
-              <Tooltip title="User Options">
+            {guestUser.map(({ name, link, icon }) => (
+              <Tooltip title={name}>
                 <IconButton
-                  onClick={(e) => setAnchorElGuest(e.currentTarget)}
-                  sx={{ p: 0 }}
+                  size="large"
                   color="inherit"
+                  onClick={(e) => navigate(link)}
+                  sx={{ mr: 2 }}
                 >
-                  <MoreVert />
+                  {icon}
+                </IconButton>
+              </Tooltip>
+            ))}
+          </Box>
+          {currentUser !== null && (
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png"
+                  />
                 </IconButton>
               </Tooltip>
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
-                anchorEl={anchorElGuest}
+                anchorEl={anchorElUser}
                 anchorOrigin={{
                   vertical: "top",
                   horizontal: "right",
@@ -254,21 +210,56 @@ export default function Sidebar({ children, options, title }) {
                   vertical: "top",
                   horizontal: "right",
                 }}
-                open={Boolean(anchorElGuest)}
-                onClose={(e) => setAnchorElGuest(null)}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
               >
-                {guestUser.map(({ name, icon, link }) => (
-                  <MenuItem key={name} onClick={(e) => navigate(link)}>
+                {userMenu.map(({ name, icon, link, click }) => (
+                  <MenuItem
+                    key={name}
+                    onClick={link ? (e) => navigate(link) : click}
+                  >
                     <ListItemIcon>{icon}</ListItemIcon>
                     <ListItemText>{name}</ListItemText>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="/static/images/avatar/1.jpg"
-                    />
                   </MenuItem>
                 ))}
               </Menu>
             </Box>
+          )}
+          <Box sx={{ flexGrow: 0, ml: 3, display: { xs: "flex", md: "none" } }}>
+            <Tooltip title="User Options">
+              <IconButton
+                onClick={(e) => setAnchorElGuest(e.currentTarget)}
+                sx={{ p: 0 }}
+                color="inherit"
+              >
+                <MoreVert />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElGuest}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElGuest)}
+              onClose={(e) => setAnchorElGuest(null)}
+            >
+              {guestUser.map(({ name, icon, link }) => (
+                <MenuItem key={name} onClick={(e) => navigate(link)}>
+                  <ListItemIcon>{icon}</ListItemIcon>
+                  <ListItemText>{name}</ListItemText>
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

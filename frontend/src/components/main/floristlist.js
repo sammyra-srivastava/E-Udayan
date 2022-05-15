@@ -64,7 +64,9 @@ const FloristList = () => {
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                       </div>
-                      <span>310</span>
+                      <span>
+                        {Math.floor(Math.random() * (400 - 50 + 1) + 50)}
+                      </span>
                     </div>
                     <div class="mt-1 mb-0 text-muted small">{mobile}</div>
                     <div class="mb-2 text-muted small">{email}</div>
@@ -102,7 +104,7 @@ const FloristList = () => {
   const filternews = () => {};
 
   return (
-    <div style={{ background: "#eee" }}>
+    <div>
       <header className="current-back">
         <Typography className="text-center text-white" variant="h5">
           Neephur
@@ -133,9 +135,8 @@ const FloristList = () => {
 
       <div className="contained-fluid mt-8">
         <div className="row">
-          <div className="col-md-3">
-          </div>
-          <div className="col-md-9">{displayData()}</div>
+          <div className="col-md-2"></div>
+          <div className="col-md-10">{displayData()}</div>
         </div>
       </div>
     </div>

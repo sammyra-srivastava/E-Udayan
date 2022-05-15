@@ -1,21 +1,15 @@
-import React from 'react'
-import { Container } from '@mui/material';
+import React from "react";
+import { Container } from "@mui/material";
+import app_config from "../../config";
 
 const NotFound = () => {
+  const url = app_config.backend_url;
+
   return (
-    <Container style={{ }}>
     <div className="container">
-      <img
-        alt=""
-        className="img-fluid"
-        src="https://www.pngkey.com/png/detail/52-520194_error-404-page-was-not-found-news-http.png"
-      />
+      <img alt="" className="w-100" src={url + "/images/404.gif"} />
     </div>
-    </Container>
   );
 };
-
-
-
 
 export default NotFound;
