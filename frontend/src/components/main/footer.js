@@ -1,15 +1,17 @@
 import React from 'react'
+import {useNavigate } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import TwitterIcon from '@mui/icons-material/Twitter';
+
 import GoogleIcon from '@mui/icons-material/Google';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import IconButton from '@mui/material/IconButton';
+
 
 
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
   <footer className="bg-dark text-center text-white" style={{backgroundColor: "#caced1"}} >
   
@@ -131,16 +133,22 @@ const Footer = () => {
   
   
   <div className="text-center p-1" style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
-  <Grid>
-    <FacebookOutlinedIcon/>
-    <TwitterIcon />
-    <GoogleIcon />
-    <InstagramIcon/>
-    <LinkedInIcon/>
-    <GitHubIcon/>
+    
+  <Grid spacing={1} style={{margin:"auto"}}>
+      <IconButton aria-label="Instagram"onClick={(e) => navigate("")} size="large" style={{cursor:"pointer", color:"white"}}>
+        < InstagramIcon />
+      </IconButton>
+      <IconButton aria-label="facebook" onClick={(e) => navigate("")} size="large" style={{cursor:"pointer" ,color:"white"}}>
+        < FacebookOutlinedIcon/>
+      </IconButton>
+      <IconButton aria-label="Instagram"onClick={(e) => navigate("")} size="large" style={{cursor:"pointer", color:"white"}}>
+        < GoogleIcon />
+      </IconButton>
   </Grid>
-    © 2020 Copyright:
-    <a className="text-white" href="https://mdbootstrap.com/">Kumkum Srivastava</a>
+  
+  
+    © 2022 Copyright:
+    <a className="text-white" href="https://mdbootstrap.com/">Neephur</a>
    
   </div>
   

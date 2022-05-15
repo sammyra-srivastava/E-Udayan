@@ -55,28 +55,49 @@ const BrowseByFlorist = () => {
   const displayData = () => {
     if (!loading) {
       return (
-        <div className="container mt-3 mb-5" >
-        <div className="card"style={{backgroundColor:"#d6fff8"}}>
-         
-          <div className="card-body">
+        <div className="browse-by-florist-back"> 
+      <div className="container mt-3 mb-5 " >
+        <div class="col-md-12 col-xl-10 ml-3">
+      <div class="card mt-5 mb-5 shadow-0 border rounded-3">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+              <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                <img
+                  src={url + "/uploads/" + floristData.image}
+                  class="w-100"
+                  alt=""
+                />
+                <a href="#!">
+                  <div class="hover-overlay">
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 ">
             <h1 style={{fontFamily:"monospace", color:"purple"}}>{floristData.shopName}</h1>
-            <h6 style={{fontFamily:"Times New Roman"}}>Timings :- {floristData.timings}</h6>
-            <h6 style={{ fontFamily:"Times New Roman"}}>Contact info:- {floristData.mobile}</h6>
-            <h6 style={{ fontFamily:"Times New Roman"}} >Address:- {floristData.address}</h6>
+            <h5 style={{fontFamily:"Times New Roman", color:"red"}}>Timings :- {floristData.timings}</h5>
+            <h5 style={{ fontFamily:"Times New Roman",color:"red"}}>Contact info:- {floristData.mobile}</h5>
+            <h5 style={{ fontFamily:"Times New Roman",color:"red"}} >Address:- {floristData.address}</h5>
+            </div>
+        </div>
+        </div>
             {displayFlowers()}
-          </div>
         </div>
         </div>
+        </div>
+        </div>
+        
+
       );
     }
   };
-
   const orderFlower = () => {};
 
   const displayFlowers = () => {
     if (!fLoading)
       return (
-        <div className="row">
+        <div className="row ml-5">
           {flowerArray.map(({ _id, name, color, price_per_kg, image }) => (
             <div className="col-lg-4 col-md-12 mb-4">
               <div className="bg-image hover-zoom ripple shadow-1-strong rounded">
@@ -90,6 +111,7 @@ const BrowseByFlorist = () => {
                   <div
                     className="mask"
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
+                   
                   >
                     <div className="d-flex justify-content-start align-items-start h-100">
                       <h5>
@@ -113,7 +135,12 @@ const BrowseByFlorist = () => {
       );
   };
 
-  return <div>{displayData()}</div>;
+  return (
+    
+  <div>{displayData()}</div>
+  
+  );
+ 
 };
 
 export default BrowseByFlorist;

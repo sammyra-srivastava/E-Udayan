@@ -134,11 +134,6 @@ const FloristList = () => {
       <div className="contained-fluid mt-8">
         <div className="row">
           <div className="col-md-3">
-            <ul className="list-group">
-              <li className="list-group-item">
-                <p>Category</p>
-              </li>
-            </ul>
           </div>
           <div className="col-md-9">{displayData()}</div>
         </div>

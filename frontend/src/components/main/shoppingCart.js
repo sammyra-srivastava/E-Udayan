@@ -25,7 +25,7 @@ const ShoppingCart = () => {
             </a>
             <div class="media-body">
               <h4 class="media-heading">{item.name}</h4>
-              <h5 class="media-heading">by {shopName}</h5>
+              <h5 class="media-heading">by{shopName}</h5>
               <span>Status: </span>
               <span class="text-success">
                 <strong>In Stock</strong>

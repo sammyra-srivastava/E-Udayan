@@ -8,19 +8,9 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Box from "@mui/material/Box";
-import GoogleIcon from "@mui/icons-material/Google";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import Stack from "@mui/material/Stack";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
+
 
 const Signup = () => {
-  const signupStyles = {
-    background: "url(https://wallpaperaccess.com/full/1223823.jpg)",
-    height: "100%",
-  };
 
   const url = app_config.backend_url;
 
@@ -61,17 +51,28 @@ const Signup = () => {
   const formBody = ({ values, handleSubmit, handleChange }) => {
     return (
      
-          <Card
-            style={{
-              display: "flex",
-              justifyContent: "end",
-              borderRadius: 5,
-              boxShadow: "2px 2px 2px 2px #fce6ff",
-            }}
-            sx={{ ml: 1, mr: 2, mt: 5, mb:5}}
-          >
-            <CardContent>
-              <Box sx={{ m:"auto" }}>
+      <Container>
+      <Card
+        style={{ borderRadius: 10, boxShadow: "4px 4px 4px 4px #89009c" }}
+        sx={{ mt: 8, mb: 10 }}
+      >
+        <Box style={{ display: "flex", float: "left" }} sx={{mt:4,ml:3}}>
+          <img
+            src="https://c4.wallpaperflare.com/wallpaper/262/450/378/pink-roses-5k-4k-wallpaper-preview.jpg"
+            alt="cartoon"
+          ></img>
+        </Box>
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            borderRadius: 5,
+            boxShadow: "2px 2px 2px 2px #fce6ff",
+          }}
+          sx={{ ml: 3, mr: 2, mt: 5 }}
+        >
+          <CardContent>
+            <Box sx={{ mt: 2, ml: 13 }}>
                 <h2>Sign Up</h2>
               </Box>
               <p>
@@ -161,17 +162,10 @@ const Signup = () => {
                   </Button>
                 </Box>
               </form>
-              <hr></hr>
-              <Stack direction="row" sx={{ ml: 7, color: "text.error" }}>
-                <GoogleIcon />
-                <FacebookOutlinedIcon />
-                <TwitterIcon />
-                <InstagramIcon />
-                <LinkedInIcon />
-                <GitHubIcon />
-              </Stack>
             </CardContent>
+            </Box>
              </Card>
+             </Container>
 
     );
   };
