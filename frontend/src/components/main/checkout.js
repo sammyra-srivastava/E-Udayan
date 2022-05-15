@@ -30,16 +30,16 @@ function Copyright() {
   );
 }
 
-const steps = ["Shipping address", "Payment details", "Review your order"];
+const steps = ["Shipping address", "Review your order", "Payment Gateway"];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
       return <AddressForm />;
     case 1:
-      return <PaymentForm />;
+      return < Review/>;
     case 2:
-      return <Review />;
+      return <PaymentForm />;
     default:
       throw new Error("Unknown step");
   }

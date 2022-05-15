@@ -174,6 +174,15 @@ const Home = () => {
                         </p>
                       </div>
                     </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-danger">
+                        Making beautiful flower a part of your life
+                      </h5>
+                      <p class="card-text text-dark">
+                        We take flower personally and we bring you happiness. To
+                        share flowers is to share happiness.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -284,30 +293,30 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                    <div class="carousel-item">
-                      <img
-                        class="rounded-circle shadow-1-strong mb-4 mt-4"
-                        src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg"
-                        alt="avatar"
-                        style={{ width: "150px", height: "150px" }}
-                        aria-controls="#picker-editor"
-                        draggable="false"
-                      />
-                      <div class="row d-flex justify-content-center">
-                        <div class="col-lg-8">
-                          <h5 class="mb-3 text-dark">Adarsh Tripathi</h5>
-                          <p class="text-dark">Photographer</p>
-                          <p class="text-muted">
-                            <i class="fas fa-quote-left pe-2"></i>
-                            <span>
-                              Maecenas auctor, quam eget tincidunt pretium,
-                              felis diam semper turpis, sed scelerisque diam
-                              libero facilisis libero. Quisque vitae semper
-                              metus. Aliquam eu dui aliquam, faucibus metus
-                              quis, elementum nunc. .
-                            </span>
-                          </p>
-                        </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="rounded-circle shadow-1-strong mb-4 mt-4"
+                      src="http://localhost:5000/images/adarsh.jpeg"
+                      alt="avatar"
+                      style={{ width: "150px", height: "150px" }}
+                      aria-controls="#picker-editor"
+                      draggable="false"
+                    />
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-lg-8">
+                        <h5 class="mb-3 text-dark">Adarsh Tripathi</h5>
+                        <p class="text-dark">Photographer</p>
+                        <p class="text-muted">
+                          <i class="fas fa-quote-left pe-2"></i>
+                          <span>
+                            Maecenas auctor, quam eget tincidunt pretium, felis
+                            diam semper turpis, sed scelerisque diam libero
+                            facilisis libero. Quisque vitae semper metus.
+                            Aliquam eu dui aliquam, faucibus metus quis,
+                            elementum nunc. .
+                          </span>
+                        </p>
                       </div>
                     </div>
                   </div>
