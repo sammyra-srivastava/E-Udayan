@@ -64,6 +64,7 @@ function App() {
               path="browseflorist/:flowername"
             />
             <Route element={<FloristList />} path="floristlist" />
+            <Route element={<FloristList />} path="floristlist" />
             <Route element={<BrowseByFlorist />} path="browsebyflorist/:id" />
 
             <Route element={<ResetPassword />} path="resetpassword" />
