@@ -14,7 +14,7 @@ const BrowseByFlorist = () => {
 
   const [loading, setLoading] = useState(true);
 
-  const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem("cart")));
+  const [cart, setCart] = useState([]);
 
   const fetchFlorist = () => {
     fetch(url + "/florist/getbyid/" + id)

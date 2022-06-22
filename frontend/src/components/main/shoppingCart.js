@@ -31,7 +31,7 @@ const ShoppingCart = () => {
           icon: "success",
           title: "Order Placed Successfully",
         });
-        // navigate("/user/manageorder");
+        navigate("/main/floristlist");
       }
     });
   };
