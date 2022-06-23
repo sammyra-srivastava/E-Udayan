@@ -9,8 +9,8 @@ mongoose
   .then(() => {
     console.log("database connected");
   })
-  .catch((err) => {
-    console.error(err);
+  .catch((error) => {
+    console.error(error);
   });
 
 module.exports = mongoose;
