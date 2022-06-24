@@ -37,12 +37,15 @@ const Signin = () => {
         });
 
         res.json().then((data) => {
-          sessionStorage.setItem("user", JSON.stringify(data));
+          
           if (data.isAdmin) {
+          sessionStorage.setItem("admin", JSON.stringify(data));
             navigate("/admin/addflorist");
             return;
+          }else{
+            sessionStorage.setItem("user", JSON.stringify(data));
+            navigate("/main/home");
           }
-          navigate("/main/home");
         });
       } else if (res.status === 400) {
         Swal.fire({
